@@ -26,6 +26,7 @@ export default function Login() {
               variant="contained"
               onClick={() => {
                 localStorage.setItem("loggedInUser", user._id);
+                localStorage.setItem("loggedInUserName", user.name);
                 setLogedIn(user.name);
               }}
             >
