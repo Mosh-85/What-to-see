@@ -2,6 +2,7 @@ import React from "react";
 import Login from "./Login";
 import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
+import Genres from "./Genres";
 
 export default function Home() {
   const [users, setUsers] = useState([]);
@@ -21,6 +22,7 @@ export default function Home() {
       {logedIn ? (
         <>
           <p>{logedIn}</p>
+          <Genres />
 
           <button
             onClick={() => {
