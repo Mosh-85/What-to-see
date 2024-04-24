@@ -6,7 +6,7 @@ import Genres from "./Genres";
 
 export default function Home() {
   const [users, setUsers] = useState([]);
-  const [logedIn, setLogedIn] = useState("Not loged in");
+  const [logedIn, setLogedIn] = useState(false);
 
   const getAllUsers = async () => {
     const data = await fetchAllUsers();
