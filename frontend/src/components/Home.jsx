@@ -20,8 +20,8 @@ export default function Home({ logedIn, setLogedIn }) {
     <section>
       {logedIn ? (
         <>
-          <p>{logedIn}</p>
-          <Genres />
+          <p>Welcome: {logedIn}</p>
+          
 
         </>
       ) : (

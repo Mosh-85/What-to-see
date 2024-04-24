@@ -16,7 +16,10 @@ import { deepOrange } from '@mui/material/colors'
 
 
 
-const pages = ['Hva skal jeg se?', 'Bla gjennom sjangere']
+const pages = [
+  'Hva skal jeg se?',
+  'Bla gjennom sjangere'
+]
 const settings = ['Logout']
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'] <-- OPPRINNELIG
 
@@ -47,8 +50,12 @@ export default function ResponsiveAppBar({ logedIn, setLogedIn}) {
     
   }
 
+  const handleClick = (clickedPage) => {
+    console.log(clickedPage);
+    clickedPage === 'Hva skal jeg se?' ? window.location.href = '/' : window.location.href = '/genres';
 
-
+  };
+  
 
   return (
     <AppBar position="static">
@@ -131,17 +138,17 @@ export default function ResponsiveAppBar({ logedIn, setLogedIn}) {
             What to see?
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {pages.map((page, i) => (
               <Button
-                key={page}
-                onClick={handleCloseNavMenu}
+                key={i}
+                onClick={() => handleClick(page)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
             ))}
           </Box>
-
+          
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
