@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
-
 import Button from "@mui/material/Button";
 
 export default function Login({ users, setLogedIn }) {
   return (
     <article className="login">
-      <h1>Login</h1>
+      <h3>Who is watching today?</h3>
+      <p>Choose a profile</p>
 
       <ul>
         {users.map((user, i) => (

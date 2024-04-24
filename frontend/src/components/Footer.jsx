@@ -1,3 +1,8 @@
 export default function Footer() {
-  return <p>Copyright 2024</p>
+  return (
+    <article className="footer">
+    <p>Copyright 2024</p>
+
+  </article>
+  )
 }
