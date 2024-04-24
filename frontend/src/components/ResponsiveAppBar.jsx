@@ -14,11 +14,14 @@ import MenuItem from '@mui/material/MenuItem'
 import { deepOrange } from '@mui/material/colors'
 
 
+
+
 const pages = ['Hva skal jeg se?', 'Bla gjennom sjangere']
 const settings = ['Logout']
 //const settings = ['Profile', 'Account', 'Dashboard', 'Logout'] <-- OPPRINNELIG
 
-export default function ResponsiveAppBar() {
+export default function ResponsiveAppBar({ logedIn, setLogedIn}) {
+  const short = logedIn ? logedIn.charAt(0) : undefined; //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_operator //
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
 
@@ -37,15 +40,26 @@ export default function ResponsiveAppBar() {
     setAnchorElUser(null)
   }
 
+  const handleLogOut = () => {
+    localStorage.removeItem("loggedInUser");
+    localStorage.removeItem("loggedInUserName");
+    setLogedIn("");
+    
+  }
+
+
+
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters> {/* disableGutters fjerner padding på sidene av toolbar */}
           <Typography
+            onClick={handleLogOut}
             variant="h6"
             noWrap
             component="a"
-            href="#app-bar-with-responsive-menu"
+            href="/"
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -58,6 +72,7 @@ export default function ResponsiveAppBar() {
           >
            What To See?
           </Typography>
+          
          
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
@@ -90,8 +105,8 @@ export default function ResponsiveAppBar() {
             >
            
               {pages.map((page) => (
-               
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page}
+                 onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
               ))}
@@ -113,7 +128,7 @@ export default function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            What to see?
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -131,7 +146,7 @@ export default function ResponsiveAppBar() {
             <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                     <Stack direction="row" spacing={2}>
-                        <Avatar sx={{ bgcolor: deepOrange[500] }}>N</Avatar>
+                        <Avatar sx={{ bgcolor: deepOrange[500] }}>{short}</Avatar>
                     </Stack>
               </IconButton>
             </Tooltip>
@@ -152,7 +167,7 @@ export default function ResponsiveAppBar() {
               onClose={handleCloseUserMenu}
             >
               {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <MenuItem key={setting} onClick={setting === 'Logout' ? handleLogOut : handleCloseUserMenu}>
                   <Typography textAlign="center">{setting}</Typography>
                 </MenuItem>
               ))}

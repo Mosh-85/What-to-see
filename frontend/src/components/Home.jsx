@@ -4,9 +4,8 @@ import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
 import Genres from "./Genres";
 
-export default function Home() {
+export default function Home({ logedIn, setLogedIn }) {
   const [users, setUsers] = useState([]);
-  const [logedIn, setLogedIn] = useState(false);
 
   const getAllUsers = async () => {
     const data = await fetchAllUsers();
@@ -24,15 +23,6 @@ export default function Home() {
           <p>{logedIn}</p>
           <Genres />
 
-          <button
-            onClick={() => {
-              localStorage.removeItem("loggedInUser");
-              localStorage.removeItem("loggedInUserName");
-              setLogedIn("");
-            }}
-          >
-            Logout
-          </button>
         </>
       ) : (
         <Login users={users} setLogedIn={setLogedIn} />
