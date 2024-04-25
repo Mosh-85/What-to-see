@@ -2,7 +2,7 @@ import React from "react";
 import Login from "./Login";
 import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
-import Genres from "./Genres";
+
 
 export default function Home({ logedIn, setLogedIn }) {
   const [users, setUsers] = useState([]);
@@ -16,17 +16,19 @@ export default function Home({ logedIn, setLogedIn }) {
     getAllUsers();
   }, []);
 
+
+
   return (
     <section>
       {logedIn ? (
         <>
           <p>Welcome: {logedIn}</p>
-          
-
         </>
       ) : (
         <Login users={users} setLogedIn={setLogedIn} />
       )}
     </section>
-  );
+  )
 }
+
+

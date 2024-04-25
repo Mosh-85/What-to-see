@@ -9,14 +9,9 @@ export const movies = {
             type: "string",
         },
         {
-            title: "Release Date",
-            name: "releaseDate",
-            type: "date",
-        },
-        {
-            title: "Rating",
-            name: "rating",
-            type: "number",
+            title: "IMDB ID",
+            name: "imdbid",
+            type: "string",
         },
         {
             title: "Genres",
@@ -29,15 +24,6 @@ export const movies = {
                 },
             ],
         },
-        {
-            title: "Description",
-            name: "description",
-            type: "text",
-        },
-        {
-            title: "Poster",
-            name: "poster",
-            type: "image",
-        },
+
     ],
 };
