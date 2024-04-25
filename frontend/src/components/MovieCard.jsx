@@ -1,43 +1,48 @@
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
 
-export default function MovieCard() {
-    const { seriesId } = useParams();
-    const [movieData, setMovieData] = useState(null);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const options = {
-                method: 'GET',
-                headers: {
-                    'X-RapidAPI-Key': 'e3d5f2a4f7msh99797ce6b0ba1f3p1facb3jsnddb62b4db111',
-                    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-                }
-            };
-            
-            try {
-                const response = await 
-                fetch(`https://moviesdatabase.p.rapidapi.com/titles${title}`, options);
-                const data = await response.json();
-                setMovieData(data.Search);
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
-        };
+export default async function MovieCard(){
+    const {seriesId} = useParams()
+    const options = {
+        method: 'GET',
+        url: `https://moviesdatabase.p.rapidapi.com/titles/series/${seriesId}`,
+        headers: {
+            'X-RapidAPI-Key': 'cff237dd6dmsheeaf6ba53431905p1d9a3cjsn0b123f5b7364',
+            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+        }
+    };
 
-        fetchData();
-    }, [seriesId]);
-
-    return (
-        <div>
-            {movieData && movieData.map(movie => (
-                <li key={movie.imdbID}>
-                    <img src={movie.Poster} alt={movie.Title} />
-                    <h3>{movie.Title}</h3>
-                    <p>{movie.Year}</p>
-                    {/* You can add more details here */}
-                </li>
-            ))}
-        </div>
-    );
+    try {
+        const response = await axios.request(options);
+        const movie = response.data;
+        return (
+            <div className="movieCard">
+                <nav>
+                    <Link to={"/"} className="homeButton">Hjem</Link>
+                    {movie ? <>{` > ${movie.title}`}</> : null}
+                </nav>
+                <section className="movieCardContent">
+                    {movie ? (
+                        <>
+                            <img src={movie.poster_url} alt={`Plakatbilde for ${movie.title}`} />
+                            <div>
+                                <h1>{movie.title}</h1>
+                                <h2>{movie.year}</h2>
+                                <h4>IMDb-lenke:</h4>
+                                <ul className="imdbLink">
+                                    <li><Link to={`https://www.imdb.com/title/${movie.imdb_id}`}>IMDb-link</Link></li>
+                                </ul>
+                            </div>
+                        </>
+                    ) : (
+                        <p>Fant ingen informasjon om denne filmen/serien.</p>
+                    )}
+                </section>
+            </div>
+        );
+    } catch (error) {
+        console.error(error);
+        return <p>Noe gikk galt ved henting av filmdata.</p>;
+    }
 }
