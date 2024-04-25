@@ -1,33 +1,58 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useEffect, useState } from 'react'
 
 export default function MovieCard() {
+
+    const [movie, setMovie] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const search = "tt0086250"
+  
     useEffect(() => {
-        const url = 'https://imdb146.p.rapidapi.com/v1/title/?id=tt0087884';
+      const fetchData = async () => {
         const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'cff237dd6dmsheeaf6ba53431905p1d9a3cjsn0b123f5b7364',
-                'X-RapidAPI-Host': 'imdb146.p.rapidapi.com'
-            }
+          method: 'GET',
+          headers: {
+            'X-RapidAPI-Key': 'fc7dd7c2a8msh7cb81de38856fa6p156d39jsnda84878f5c7f',
+            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+          }
         };
-
-        fetch(url, options)
-            .then(response => response.json())
-            .then(data => {
-                const list = data.d;
-                list.map((item) => {
-                    const name = item.l;
-                    const poster = item.i.imageUrl;
-                    const movie = `<li><img src="${poster}" alt="${name}"></h2></li>`;
-                    document.querySelector('movie-list').innerHTML += movie;
-                });
+  
+        try {
+          const response = await fetch(`https://moviesdatabase.p.rapidapi.com/titles/${search}`, options);
+          const data = await response.json()
+  
+          if (data && data.results) {
+            setMovie({
+              title: data.results.titleText.text, 
+              image: data.results.primaryImage.url
             })
-            .catch(err => {
-                console.error(err);
-            });
+          } else {
+            setMovie(null);
+          }
+        } catch (error) {
+          console.error('Error fetching data:', error)
+          setMovie(null)
+        }
+  
+        setIsLoading(false)
+      };
+  
+      fetchData()
     }, []);
-
-    return null;
-}
-
-    
+  
+    if (isLoading) {
+      return <p>Loading...</p>
+    }
+  
+    if (!movie) {
+      return <p>No movie found</p>
+    }
+  
+    return (
+      <div>
+        <h1>{movie.title}</h1>
+        <img src={movie.image} alt={movie.title} />
+      </div>
+    )
+  }
+  
