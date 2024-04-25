@@ -12,7 +12,7 @@ const user = localStorage.getItem('loggedInUser')
 
 export async function fetchFavGenres() {
     const data = await client.fetch(`*[_type == "users" && _id == "${user}"]{
-        favoritgenres
+        "favoriteGenres": favoritgenres[]._ref
     }`)
     return data
 }
