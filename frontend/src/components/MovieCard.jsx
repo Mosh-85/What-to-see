@@ -1,49 +1,33 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 export default function MovieCard() {
-
-    const [movie, setMovie] = useState([])
-    const title = "Movie Title"
-    const search = "tt0086250"
-
-    const url = `https://moviesdatabase.p.rapidapi.com/titles/${search}`
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '0c7b4fc9b2msh5fc5c97b90de63fp19885ajsnb445f20504d7',
-            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-        }
-    }
-    
-  
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url, options);
-                const result = await response.json()
-                setMovie(result)
-            } catch (error) {
-                console.error(error)
+        const url = 'https://imdb146.p.rapidapi.com/v1/title/?id=tt0087884';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': 'cff237dd6dmsheeaf6ba53431905p1d9a3cjsn0b123f5b7364',
+                'X-RapidAPI-Host': 'imdb146.p.rapidapi.com'
             }
         };
-        fetchData()
-      }, [])
-    console.log(movie)
-      
-    return (
-        <article>
-            
-            <h1>{title}</h1>
-           {/*  <img src={movie[0]?.primaryImage[0].url} alt={movie[0]?.titleText[0].text}/> */}
 
+        fetch(url, options)
+            .then(response => response.json())
+            .then(data => {
+                const list = data.d;
+                list.map((item) => {
+                    const name = item.l;
+                    const poster = item.i.imageUrl;
+                    const movie = `<li><img src="${poster}" alt="${name}"></h2></li>`;
+                    document.querySelector('movie-list').innerHTML += movie;
+                });
+            })
+            .catch(err => {
+                console.error(err);
+            });
+    }, []);
 
-
-             {/*    {p?.episode?.map((item, i) => <li key={i}><Episode name={item}/></li>)}
-            
-            {/*{post?.map(item => <PostCard key={item.id} title={item.title} category={item.category} id={item.id} ingress={item.ingress}/>)}*/}
-        </article>
-        
-        )
+    return null;
 }
+
+    
