@@ -17,12 +17,13 @@ export default function Genres() {
       setGenres(allGenres);
 
       const favGenres = await fetchFavGenres();
-      setFavGenres(favGenres);
+      setFavGenres(favGenres[0].favoriteGenres);
   };
 
   fetchData();
   }, []);
   
+
 
   const handleCheckboxChange = (genreId) => {
     const updatedFavGenres = favGenres.includes(genreId)
