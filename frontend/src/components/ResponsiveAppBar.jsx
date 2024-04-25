@@ -12,10 +12,6 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import { deepOrange } from '@mui/material/colors'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTv } from '@fortawesome/free-solid-svg-icons'
-
-
 
 
 
@@ -83,8 +79,6 @@ export default function ResponsiveAppBar({ logedIn, setLogedIn}) {
            What To See?
           </Typography>
      
-          <FontAwesomeIcon icon={faTv}/>
-          {/* KILDE: https://docs.fontawesome.com/web/use-with/react/add-icons */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
