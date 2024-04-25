@@ -1,13 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function MovieCard() {
+    const { seriesId } = useParams();
     const [movieData, setMovieData] = useState(null);
-    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchData = async () => {
-            const url = 'https://moviesdatabase.p.rapidapi.com/titles/search/title/%7Btitle%7D?exact=true&titleType=movie';
             const options = {
                 method: 'GET',
                 headers: {
@@ -15,30 +14,30 @@ export default function MovieCard() {
                     'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
                 }
             };
-
+            
             try {
-                const response = await fetch(url, options);
-                const result = await response.json(); 
-                setMovieData(result);
+                const response = await 
+                fetch(`https://moviesdatabase.p.rapidapi.com/titles${title}`, options);
+                const data = await response.json();
+                setMovieData(data.Search);
             } catch (error) {
-                console.error('Fetching error:', error);
-                setError(error);
+                console.error('Error fetching data:', error);
             }
         };
 
         fetchData();
-    }, []);
+    }, [seriesId]);
 
     return (
-        <div className="movie-card">
-            <div className="movie-card__image">
-                <img src={movieData && movieData.posterUrl ? movieData.posterUrl : 'https://via.placeholder.com/300'} alt="movie poster" />
-            </div>
-            <div className="movie-card__content">
-                <h2 className="movie-card__title">{movieData ? movieData.title : 'Loading...'}</h2>
-                <p className="movie-card__description">{movieData ? movieData.description : 'Description will appear here...'}</p>
-                <Link to="/movie/1">View Details</Link>
-            </div>
+        <div>
+            {movieData && movieData.map(movie => (
+                <li key={movie.imdbID}>
+                    <img src={movie.Poster} alt={movie.Title} />
+                    <h3>{movie.Title}</h3>
+                    <p>{movie.Year}</p>
+                    {/* You can add more details here */}
+                </li>
+            ))}
         </div>
     );
 }
