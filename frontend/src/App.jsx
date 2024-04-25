@@ -8,6 +8,7 @@ import Genres from "./components/Genres";
 
 function App() {
   const [logedIn, setLogedIn] = useState(false);
+  
 
   return (
     <>

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
+import { fetchFavGenres } from "../../sanity/services.js/userServices";
 
 export default function Genres() {
   const [genres, setGenres] = useState([]);
@@ -13,16 +14,23 @@ export default function Genres() {
     setGenres(data);
   };
 
+  const getFavGenres = async () => {
+    const favGenres = await fetchFavGenres();
+  };
+  
+
   const handleCheckboxChange = (e, i) => {
     console.log(e.target.checked);
     console.log(i);
   };
 
+
+
+
   useEffect(() => {
     getAllGenres();
+    getFavGenres();
   }, []);
-
-  console.log(genres);
 
   return (
     <section>
