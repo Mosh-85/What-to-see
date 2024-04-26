@@ -5,21 +5,21 @@ import { Routes, Route } from "react-router-dom";
 import "./style/main.scss";
 import { useState } from "react";
 import Genres from "./components/Genres";
-import MovieCard from "./components/MovieCard";
+import Postpage from "./components/Postpage";
 
 function App() {
-  const [logedIn, setLogedIn] = useState(false);
+  const logedIn = localStorage.getItem("loggedInUserName")
   
 
   return (
     <>
-      <Header logedIn={logedIn} setLogedIn={setLogedIn} />
+      <Header logedIn={logedIn}/>
       <Routes>
         <Route
           path="/"
-          element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}
+          element={<Home logedIn={logedIn} />}
         />
-        <Route path="/moviecard" element={<MovieCard />} />
+        <Route path="/postpage" element={<Postpage />} />
         <Route path="/genres" element={<Genres />} />
       </Routes>
       <Footer />

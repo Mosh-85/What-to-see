@@ -1,9 +1,11 @@
-import {client} from "../client"
+import { client } from "../client"
 
 export async function fetchAllMovies() {
     const data = await client.fetch(`*[_type == "movies"]{
         _id,
-        name
+        title,
+        slug,
+        imdbid,
     }`)
     return data
 }

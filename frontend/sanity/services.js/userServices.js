@@ -13,6 +13,22 @@ const user = localStorage.getItem('loggedInUser')
 export async function fetchFavGenres() {
     const data = await client.fetch(`*[_type == "users" && _id == "${user}"]{
         "favoriteGenres": favoritgenres[]._ref
+        
     }`)
+    return data
+}
+
+
+export async function fetchUserMovies() {
+    const data = await client.fetch(`*[_type == "users" && _id == "${user}"]{
+        "user": name,
+        "favoriteMovies": favorittemovies[] {
+          "movie": *[_id == ^._ref][0] {
+            title,
+            genres,
+            imdbid
+          }
+        } 
+      }`)
     return data
 }
