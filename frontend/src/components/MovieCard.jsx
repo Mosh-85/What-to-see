@@ -3,56 +3,37 @@ import { useEffect, useState } from 'react'
 
 export default function MovieCard() {
 
-    const [movie, setMovie] = useState(null)
-    const [isLoading, setIsLoading] = useState(true)
-    const search = "tt0086250"
+    const [movies, setMovies] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null);
   
     useEffect(() => {
-      const fetchData = async () => {
-        const options = {
-          method: 'GET',
-          headers: {
-            'X-RapidAPI-Key': 'fc7dd7c2a8msh7cb81de38856fa6p156d39jsnda84878f5c7f',
-            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-          }
-        };
-  
+      const fetchMovies = async () => {
         try {
-          const response = await fetch(`https://moviesdatabase.p.rapidapi.com/titles/${search}`, options);
-          const data = await response.json()
-  
-          if (data && data.results) {
-            setMovie({
-              title: data.results.titleText.text, 
-              image: data.results.primaryImage.url
-            })
-          } else {
-            setMovie(null);
-          }
-        } catch (error) {
-          console.error('Error fetching data:', error)
-          setMovie(null)
+          const data = await fetchFromAPI('https://moviesdatabase.p.rapidapi.com/titles/${search}');
+          setMovies(data.docs);
+          setIsLoading(false);
+        } catch (err) {
+          setError(err);
+          setIsLoading(false);
         }
-  
-        setIsLoading(false)
       };
-  
-      fetchData()
+    
+      fetchMovies();
     }, []);
-  
-    if (isLoading) {
-      return <p>Loading...</p>
-    }
-  
-    if (!movie) {
-      return <p>No movie found</p>
-    }
-  
+
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error.message}</div>;
+
     return (
       <div>
-        <h1>{movie.title}</h1>
-        <img src={movie.image} alt={movie.title} />
+        {movies.map((movie) => (
+          <MovieCard key={movie._id} movie={movie} />
+        ))}
       </div>
-    )
-  }
+    );
+}
+
+
   
+    
