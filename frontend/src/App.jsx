@@ -3,7 +3,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import "./style/main.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Genres from "./components/Genres";
 import MovieCard from "./components/MovieCard";
 
@@ -19,7 +19,7 @@ function App() {
           path="/"
           element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}
         />
-        <Route path="/moviecard" element={<MovieCard />} />
+        <Route path="/Moviecard" element={<MovieCard />} />
         <Route path="/genres" element={<Genres />} />
       </Routes>
       <Footer />
