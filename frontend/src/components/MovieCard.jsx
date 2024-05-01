@@ -1,39 +1,13 @@
-import React from 'react';
-import { useEffect, useState } from 'react'
+import {link} from 'react-router-dom';
 
-export default function MovieCard() {
 
-    const [movies, setMovies] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState(null);
-  
-    useEffect(() => {
-      const fetchMovies = async () => {
-        try {
-          const data = await fetchFromAPI('https://moviesdatabase.p.rapidapi.com/titles/${search}');
-          setMovies(data.docs);
-          setIsLoading(false);
-        } catch (err) {
-          setError(err);
-          setIsLoading(false);
-        }
-      };
-    
-      fetchMovies();
-    }, []);
-
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
-
+export default function MovieCard({title,image,imageText,imdbId}) {
     return (
-      <div>
-        {movies.map((movie) => (
-          <MovieCard key={movie._id} movie={movie} />
-        ))}
-      </div>
-    );
+       <article>
+         <Link to={`https://www.imdb.com/title/${imdbId}`}>
+                <img src={image} alt={imageText} ></img>
+                <h3>{title}</h3>
+            </Link>
+        </article>
+    )
 }
-
-
-  
-    
