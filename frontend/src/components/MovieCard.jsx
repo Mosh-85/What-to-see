@@ -1,6 +1,7 @@
 import {link} from "react-router-dom";
-import {useState, useEffect} from "react";
-import { apiClient } from "../../imdbapi/apiClient";
+import { useEffect} from "react";
+import { useState } from "react";
+import {apiClient} from "../imdbapi/apiClient";
 
 
 
@@ -13,7 +14,8 @@ export default function MovieCard({title, imdbId}) {
         const url = `https://moviesdatabase.p.rapidapi.com/titles/${movieId}`;
         try {
             const respons=  await response.json();
-            setImdImage({
+            setImdImage(
+                {
                 url: result.results.primaryImage.url,
                 caption: result.results.primaryImage.caption.plainText 
             })
@@ -43,3 +45,9 @@ export default function MovieCard({title, imdbId}) {
         </article>
     )
 }
+
+// denne funksjonskomponenten MovieCard tar inn en title-prop og en imdbId-prop, og
+// viser et bilde og en tittel, og lenker til imdb-siden for filmen.
+// Hvis det ikke er noen bilde-URL, vises ingenting.
+// Når komponenten monteres, hentes bildet fra imdb-apien, og når bildet er mottatt, vises det.
+// Hvis det oppstår en feil, logges denne til konsollen.

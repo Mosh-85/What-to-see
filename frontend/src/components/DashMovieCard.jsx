@@ -9,7 +9,10 @@ export default function DashMovieCard({movie}) {
         </article>
         )
     } else {
-        return <p>loading...</p>
+        return null
     }
 }
     
+// denne funksjonskomponenten DashMovieCard tar inn en movie-prop, og
+// hvis denne prop-en eksisterer, vises informasjonen om filmen (ID, tittel og bilde), ellers vises ingenting.
+// Hvis det ikke er noen bilde-URL, vises ingenting.
