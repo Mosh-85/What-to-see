@@ -2,6 +2,8 @@ import React from "react";
 import Login from "./Login";
 import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
+import {MovieCard} from "./MovieCard";
+
 
 
 export default function Home({ logedIn, setLogedIn }) {
