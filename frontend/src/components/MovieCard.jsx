@@ -40,7 +40,7 @@ export default function MovieCard({title, imdbId}) {
             </picture>
             </Link>
             <Link to={`https://www.imdb.com/title/${imdbId}`}>                
-                <h3>{title}</h3>
+                <h1>{title}</h1>
             </Link>
         </article>
     )
