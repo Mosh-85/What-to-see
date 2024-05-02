@@ -6,7 +6,7 @@ import "./style/main.scss";
 import { useEffect, useState } from "react";
 import Genres from "./components/Genres";
 import MovieCard from "./components/MovieCard";
-import {DashMovieCard} from "./components/DashMovieCard";
+
 
 function App() {
   const [logedIn, setLogedIn] = useState(false);
@@ -15,6 +15,7 @@ function App() {
   return (
     <>
       <Header logedIn={logedIn} setLogedIn={setLogedIn} />
+      <MovieCard />
       <Routes>
         <Route
           path="/"
