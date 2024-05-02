@@ -13,7 +13,8 @@ export default function MovieCard({title, imdbId}) {
 
         const url = `https://moviesdatabase.p.rapidapi.com/titles/${movieId}`;
         try {
-            const respons= await response.json();
+            const response = await fetch(url,apiClient);
+            const result = await response.json();
             setImdImage(
                 {
                 url: result.results.primaryImage.url,
