@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
-import { fetchFavGenres } from "../../sanity/services.js/userServices";
 import { fetchAllGenres } from "../../sanity/services.js/genreServices";
+import { fetchFavGenres } from "../../sanity/services.js/userServices";
 
-export default function Genres() {
+
+export default function Genres({userId}) {
   const [genres, setGenres] = useState([]);
   const [favGenres, setFavGenres] = useState([]);
-
   const label = { inputProps: { "aria-label": "Fav-Toggle" } };
 
   useEffect(() => {
@@ -16,15 +16,13 @@ export default function Genres() {
       const allGenres = await fetchAllGenres();
       setGenres(allGenres);
 
-      const favGenres = await fetchFavGenres();
+      const favGenres = await fetchFavGenres(userId);
       setFavGenres(favGenres[0].favoriteGenres);
   };
 
   fetchData();
   }, []);
   
-
-
   const handleCheckboxChange = (genreId) => {
     const updatedFavGenres = favGenres.includes(genreId)
       ? favGenres.filter((id) => id !== genreId)
@@ -32,10 +30,6 @@ export default function Genres() {
     
     setFavGenres(updatedFavGenres);
   };
-
-
-  console.log(favGenres);
-
 
   return (
     <section>

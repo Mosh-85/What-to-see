@@ -1,4 +1,4 @@
-import { client } from "../client"
+import { client, writeClient } from "../client"
 
 export async function fetchAllUsers() {
     const data = await client.fetch(`*[_type == "users"]{
@@ -8,11 +8,28 @@ export async function fetchAllUsers() {
     return data
 }
 
-const user = localStorage.getItem('loggedInUser')
 
-export async function fetchFavGenres() {
-    const data = await client.fetch(`*[_type == "users" && _id == "${user}"]{
+export async function fetchFavGenres(userId) {
+    const data = await client.fetch(`*[_type == "users" && _id == "${userId}"]{
         "favoriteGenres": favoritgenres[]._ref
     }`)
     return data
 }
+
+
+export async function writeClientGenres(userId, favGenres) {
+    const data = await writeClient.patch(userId).set({ favoriteGenres: favGenres }).commit()
+        .then(() => { return "Genre added" })
+        .catch((error) => { return "Genre not added" + error.message });
+    return data
+
+}
+
+
+
+
+
+
+
+
+
