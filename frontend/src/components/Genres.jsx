@@ -5,6 +5,7 @@ import Favorite from "@mui/icons-material/Favorite";
 import { fetchFavGenres } from "../../sanity/services.js/userServices";
 import { fetchAllGenres } from "../../sanity/services.js/genreServices";
 
+
 export default function Genres() {
   const [genres, setGenres] = useState([]);
   const [favGenres, setFavGenres] = useState([]);

@@ -6,6 +6,8 @@ import "./style/main.scss";
 import { useState } from "react";
 import Genres from "./components/Genres";
 import Postpage from "./components/Postpage";
+import MovieCard from "./components/MovieCard";
+import { useEffect } from "react";
 
 function App() {
   const logedIn = localStorage.getItem("loggedInUserName")
@@ -14,6 +16,7 @@ function App() {
   return (
     <>
       <Header logedIn={logedIn}/>
+      <MovieCard />
       <Routes>
         <Route
           path="/"
