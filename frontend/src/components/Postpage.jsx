@@ -37,7 +37,7 @@ export default function Postpage() {
             {userMovies.map((movie, i) => (
             <li key={i}>
                 <h2>{movie.title}</h2>
-                <p>IMDB: {movie.imdbid}</p>
+                <p>IMDB: {movie.movieId}</p>
             </li>
             ))} 
         </ul>

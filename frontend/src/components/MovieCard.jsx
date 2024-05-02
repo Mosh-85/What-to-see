@@ -5,17 +5,18 @@ import { apiClient } from "../../imdbapi/apiClient";
 
 
 
+
 export default function MovieCard({title, imdbId}) {
 
-    const [imdbImage, setImdImage] = useState();
+    const [IMDbImage, setIMDbImage] = useState();
 
-    const fetchImdImage = async (movieId) => {
+    const fetchIMDbImage = async (movieId) => {
 
         const url = `https://moviesdatabase.p.rapidapi.com/titles/${movieId}`;
         try {
             const response = await fetch(url,apiClient);
             const result = await response.json();
-            setImdImage(
+            setIMDbImage(
                 {
                 url: result.results.primaryImage.url,
                 caption: result.results.primaryImage.caption.plainText 
@@ -27,17 +28,16 @@ export default function MovieCard({title, imdbId}) {
     }
 
     useEffect(() => {
-        fetchImdImage(imdbId);
-    }, [imdbId])
-
+        fetchIMDbImage(imdbId, setIMDbImage);
+    }, [imdbId]);
 
 
     return (
        <article>
          <Link to={`https://www.imdb.com/title/${imdbId}`}>
             <picture>
-                <source media="(min-width: 400px)" srcSet={imdbImage?.url} />
-                <img src={imdbImage?.url} alt={imdbImage?.caption} width= "300" height="500"></img> 
+                <source media="(min-width: 400px)" srcSet={IMDbImage?.url} />
+                <img src={IMDbImage?.url} alt={IMDbImage?.caption} width= "300" height="500"></img> 
             </picture>
             </Link>
             <Link to={`https://www.imdb.com/title/${imdbId}`}>                
