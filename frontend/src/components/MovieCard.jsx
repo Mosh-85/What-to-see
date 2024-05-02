@@ -1,49 +1,54 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
-import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+import { useEffect} from "react";
+import { useState } from "react";
+import { apiClient } from "../../imdbapi/apiClient";
 
-export default function MovieCard() {
 
-    const [movie, setMovie] = useState([])
-    const title = "Movie Title"
-    const search = "tt0086250"
 
-    const url = `https://moviesdatabase.p.rapidapi.com/titles/${search}`
-    const options = {
-        method: 'GET',
-        headers: {
-            'X-RapidAPI-Key': '0c7b4fc9b2msh5fc5c97b90de63fp19885ajsnb445f20504d7',
-            'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
+export default function MovieCard({title, imdbId}) {
+
+    const [imdbImage, setImdImage] = useState();
+
+    const fetchImdImage = async (movieId) => {
+
+        const url = `https://moviesdatabase.p.rapidapi.com/titles/${movieId}`;
+        try {
+            const response = await fetch(url,apiClient);
+            const result = await response.json();
+            setImdImage(
+                {
+                url: result.results.primaryImage.url,
+                caption: result.results.primaryImage.caption.plainText 
+            })
+        } catch (error) { console
+            .error(error);
         }
+
     }
-    
-  
+
     useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const response = await fetch(url, options);
-                const result = await response.json()
-                setMovie(result)
-            } catch (error) {
-                console.error(error)
-            }
-        };
-        fetchData()
-      }, [])
-    console.log(movie)
-      
+        fetchImdImage(imdbId);
+    }, [imdbId])
+
+
+
     return (
-        <article>
-            
-            <h1>{title}</h1>
-           {/*  <img src={movie[0]?.primaryImage[0].url} alt={movie[0]?.titleText[0].text}/> */}
-
-
-
-             {/*    {p?.episode?.map((item, i) => <li key={i}><Episode name={item}/></li>)}
-            
-            {/*{post?.map(item => <PostCard key={item.id} title={item.title} category={item.category} id={item.id} ingress={item.ingress}/>)}*/}
+       <article>
+         <Link to={`https://www.imdb.com/title/${imdbId}`}>
+            <picture>
+                <source media="(min-width: 400px)" srcSet={imdbImage?.url} />
+                <img src={imdbImage?.url} alt={imdbImage?.caption} width= "300" height="500"></img> 
+            </picture>
+            </Link>
+            <Link to={`https://www.imdb.com/title/${imdbId}`}>                
+                <h1>{title}</h1>
+            </Link>
         </article>
-        
-        )
+    )
 }
+
+// denne funksjonskomponenten MovieCard tar inn en title-prop og en imdbId-prop, og
+// viser et bilde og en tittel, og lenker til imdb-siden for filmen.
+// Hvis det ikke er noen bilde-URL, vises ingenting.
+// Når komponenten monteres, hentes bildet fra imdb-apien, og når bildet er mottatt, vises det.
+// Hvis det oppstår en feil, logges denne til konsollen.

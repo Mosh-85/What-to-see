@@ -15,6 +15,7 @@ import { deepOrange } from '@mui/material/colors'
 
 
 
+
 const pages = [
   'Hva skal jeg se?',
   'Bla gjennom sjangere'
