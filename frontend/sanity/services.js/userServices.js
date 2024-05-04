@@ -18,9 +18,11 @@ export async function fetchFavGenres(userId) {
 
 
 export async function writeClientGenres(userId, favGenres) {
-    const data = await writeClient.patch(userId).set({ favoriteGenres: favGenres }).commit()
+    const data = await writeClient.patch('users', userId)
+        .set({ favoritegenres: { _ref: favGenres, _type: reference } })
+        .commit({ autoGenerateArrayKeys: true })
         .then(() => { return "Genre added" })
-        .catch((error) => { return "Genre not added" + error.message });
+        .catch((error) => { return "Genre not added: " + error.message });
     return data
 
 }
