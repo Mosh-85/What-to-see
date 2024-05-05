@@ -6,6 +6,7 @@ import "./style/main.scss";
 import { useState } from "react";
 import Genres from "./components/Genres";
 import MovieCard from "./components/MovieCard";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   const [logedIn, setLogedIn] = useState(false);
@@ -20,6 +21,7 @@ function App() {
         />
         <Route path="/moviecard" element={<MovieCard />} />
         <Route path="/genres" element={<Genres />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </>

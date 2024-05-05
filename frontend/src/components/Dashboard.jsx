@@ -3,20 +3,20 @@ import Gosafe from "./Gosafe"
 import Utforsk from "./Utforsk"
 
 
-export default function Dashboard(logedIn, users) {
+export default function Dashboard() {
     return (
     <>
-        <h1>FORSLAG FOR {logedIn} OG {user.name} </h1>
+        <h1>FORSLAG FOR X OG X </h1>
 
-        <section>
+        <section className="catch">
             <Catchup />
         </section>
 
-        <section>
+        <section className="gosafe">
             <Gosafe />
         </section>
 
-        <section>
+        <section className="utforsk">
             <Utforsk/>
         </section>
     </>
