@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
 import { useEffect} from "react";
 import { useState } from "react";
-import { apiClient } from "../../imdbapi/apiClient";
+import { apiClient } from "../../imdbapi/apiClient"; // cspell:ignore imdbapi
 
-
-
+// cspell:ignore imdb
 
 export default function MovieCard({title, imdbId}) {
 
