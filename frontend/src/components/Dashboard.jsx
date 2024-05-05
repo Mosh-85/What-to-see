@@ -2,10 +2,11 @@ import Catchup from "./Catchup"
 import Gosafe from "./Gosafe"
 import Utforsk from "./Utforsk"
 
-export default function Dashboard() {
+
+export default function Dashboard(logedIn, users) {
     return (
     <>
-        <h1>FORSLAG FOR -- x -- OG -- x -- </h1>
+        <h1>FORSLAG FOR {logedIn} OG {user.name} </h1>
 
         <section>
             <Catchup />

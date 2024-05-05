@@ -1,4 +1,5 @@
 import MovieCard from "./MovieCard"
+
 export default function Catchup() {
 Return (
 <>
