@@ -1,3 +1,4 @@
+import React from "react";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
@@ -5,25 +6,25 @@ import { Routes, Route } from "react-router-dom";
 import "./style/main.scss";
 import { useState } from "react";
 import Genres from "./components/Genres";
-import Postpage from "./components/Postpage";
 import MovieCard from "./components/MovieCard";
-import { useEffect } from "react";
 
 function App() {
-  const logedIn = localStorage.getItem("loggedInUserName")
+  const [logedIn, setLogedIn] = useState(false);
+  const userId = localStorage.getItem("loggedInUser");
+  const userName = localStorage.getItem("loggedInUserName");
+
   
 
   return (
     <>
-      <Header logedIn={logedIn}/>
-      <MovieCard />
+      <Header logedIn={logedIn} setLogedIn={setLogedIn} userName={userName} />
       <Routes>
         <Route
           path="/"
-          element={<Home logedIn={logedIn} />}
+          element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}
         />
-        <Route path="/postpage" element={<Postpage />} />
-        <Route path="/genres" element={<Genres />} />
+        <Route path="/moviecard" element={<MovieCard />} />
+        <Route path="/genres" element={<Genres userId={userId}/>} />
       </Routes>
       <Footer />
     </>

@@ -1,7 +1,8 @@
 import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
 
-export default function Login({ users }) {
+export default function Login({ users, setLogedIn}) {
+  
+
   return (
     <article className="login">
       <h3>Who is watching today?</h3>
@@ -15,10 +16,10 @@ export default function Login({ users }) {
               onClick={() => {
                 localStorage.setItem("loggedInUser", user._id);
                 localStorage.setItem("loggedInUserName", user.name);
+                setLogedIn(user.name);
               }}
-            ><Link to="/postpage"> 
+            >
               {user.name}
-              </Link>
             </Button>
           </li>
         ))}

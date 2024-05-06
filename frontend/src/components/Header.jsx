@@ -4,11 +4,9 @@ import { Avatar } from "@mui/material"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import React from "react"
-import { Link } from "react-router-dom"
 
 
-export default function Header( {logedIn} ) {
-  
+export default function Header({  setLogedIn, userName }) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -23,15 +21,15 @@ export default function Header( {logedIn} ) {
   const handleLogOut = () => {
     localStorage.removeItem("loggedInUser");
     localStorage.removeItem("loggedInUserName");
+    setLogedIn("")
     handleClose() 
   }
-  
 
   return (
     <header className="header">
       <nav>
         <Button className="logo" href="./">What To See?</Button>
-        <Button className="whattosee" startIcon={<TvIcon/>} href="./postpage" >Hva skal jeg se?</Button>
+        <Button className="whattosee" startIcon={<TvIcon/>} href="./home" >Hva skal jeg se?</Button>
         <Button className="genre" href="./Genres">Bla gjennom sjangere</Button>
         <Button className="user" 
         aria-controls={open ? 'demo-positioned-menu' : undefined}
@@ -39,7 +37,7 @@ export default function Header( {logedIn} ) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-       <Avatar className="avatar">{logedIn}</Avatar>
+       <Avatar className="avatar">{userName}</Avatar>
       </Button>
       <Menu 
         aria-labelledby="demo-positioned-button"
@@ -47,7 +45,7 @@ export default function Header( {logedIn} ) {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleLogOut}><Link to="/">Logout</Link></MenuItem>
+        <MenuItem onClick={handleLogOut}>Logout</MenuItem>
       </Menu> 
       </nav>
     </header>
