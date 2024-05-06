@@ -27,7 +27,7 @@ function App() {
           path="/"
           element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}
         />
-        <Route path="/moviecard" element={<MovieCard />} />
+        <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
         <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} />} />
       </Routes>

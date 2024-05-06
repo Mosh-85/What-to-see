@@ -1,13 +1,29 @@
 import React from 'react';
 import { useEffect, useState } from 'react'
+import { fetchFavMovies } from '../../sanity/services.js/userServices'
 
-export default function MovieCard() {
+export default function MovieCard({userId}) {
 
     const [movie, setMovie] = useState(null)
     const [isLoading, setIsLoading] = useState(true)
     const search = "tt0086250"
-  
-    useEffect(() => {
+
+    const [favMovies, setFavMovies] = useState(null)
+
+   useEffect(() => { 
+    const fetchData = async () => {
+    const data = await fetchFavMovies(userId)
+    setFavMovies(data[0].favorittemovies);
+   }
+    fetchData();
+   }, [userId]);
+
+console.log("Fav Movies: ", favMovies);
+console.log(userId)
+
+
+
+  useEffect(() => {
       const fetchData = async () => {
         const options = {
           method: 'GET',
@@ -40,18 +56,25 @@ export default function MovieCard() {
       fetchData()
     }, []);
   
-    if (isLoading) {
+  /*   if (isLoading) {
       return <p>Loading...</p>
     }
   
     if (!movie) {
       return <p>No movie found</p>
-    }
+    } */
   
+    const favorite = favMovies?.map((movies, index) => {
+      return (
+        <li key={index}>
+          <h2>{movies.title}</h2>
+        </li>
+      );
+    }) 
+
     return (
       <div>
-        <h1>{movie.title}</h1>
-        <img src={movie.image} alt={movie.title} />
+        <ul> {favorite} </ul>
       </div>
     )
   }
