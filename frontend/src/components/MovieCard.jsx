@@ -11,7 +11,7 @@ export default function MovieCard({title, imdbId}) {
 
     const fetchIMDbImage = async (movieId) => {
 
-        const url = `https://moviesdatabase.p.rapidapi.com/titles/${movieId}`;
+        const url = `'https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=%3CREQUIRED%3E'${imdbId}`;
         try {
             const response = await fetch(url,apiClient);
             const result = await response.json();
@@ -48,6 +48,6 @@ export default function MovieCard({title, imdbId}) {
 
 // denne funksjonskomponenten MovieCard tar inn en title-prop og en imdbId-prop, og
 // viser et bilde og en tittel, og lenker til imdb-siden for filmen.
-// Hvis det ikke er noen bilde-URL, vises ingenting.
-// Når komponenten monteres, hentes bildet fra imdb-apien, og når bildet er mottatt, vises det.
+// If there is no image URL, nothing is displayed.
+// When the component is mounted, the image is fetched from the imdb API, and when the image is received, it is displayed.
 // Hvis det oppstår en feil, logges denne til konsollen.
