@@ -3,7 +3,7 @@ import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import { fetchAllGenres } from "../../sanity/services.js/genreServices";
-import { fetchFavGenres, writeClientGenres } from "../../sanity/services.js/userServices";
+import { addFavGenre, fetchFavGenres, removeFavGenre } from "../../sanity/services.js/userServices";
 
 export default function Genres({ userId }) {
   const [genres, setGenres] = useState([]);
@@ -27,19 +27,21 @@ export default function Genres({ userId }) {
 
   const handleCheckboxChange = async (e, genreId) => {
     e.preventDefault();
-    const result = await writeClientGenres(userId, favGenres);
-    if (result === "Genre added") {
-      setFormMessage(result);
-      setFavGenres((prev) => {
-        return [...prev, genreId];
-      });
-    } else {
-      setFormMessage(result);
+    try {
+      if (favGenres.includes(genreId)) {
+        await removeFavGenre(userId, genreId);
+        setFavGenres(favGenres.filter(id => id !== genreId));
+        setFormMessage("Genre removed from favorites.");
+      } else {
+        await addFavGenre(userId, genreId);
+        setFavGenres([...favGenres, genreId]);
+        setFormMessage("Genre added to favorites.");
+      }
+    } catch (error) {
+      setFormMessage("Error updating favorites. Please try again.");
     }
-  
-    console.log("Genre ID: ", genreId);
   };
-  console.log("Fav Genres: ", favGenres); 
+
 
   return (
     <section>
