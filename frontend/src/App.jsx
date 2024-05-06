@@ -21,11 +21,11 @@ function App() {
 
   return (
     <>
-      <Header logedIn={logedIn} setLogedIn={setLogedIn} userName={userName} />
+      <Header setLogedIn={setLogedIn} userName={userName} />
       <Routes>
         <Route
           path="/"
-          element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}
+          element={<Home userName={userName} setLogedIn={setLogedIn} />}
         />
         <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
