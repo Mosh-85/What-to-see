@@ -22,7 +22,6 @@ console.log("Fav Movies: ", favMovies);
 console.log(userId)
 
 
-
   useEffect(() => {
       const fetchData = async () => {
         const options = {

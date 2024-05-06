@@ -26,7 +26,7 @@ export async function fetchFavMovies(userId) {
 
 export async function fetchFavWish(userId) {
     const data = await client.fetch(`*[_type == "users" && _id == "${userId}"]{
-        "wishlist": wishlist[]._ref
+        "wishlist": wishlist[] -> {title, imdbid}
     }`)
     return data
 }
