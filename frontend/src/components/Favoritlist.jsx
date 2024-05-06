@@ -1,9 +1,9 @@
 import MovieCard from "./MovieCard"
 
-export default function Gosafe() {
+export default function Favoritlist() {
     return (
     <>
-        <h3>Go safe!</h3>
+        <h3>Deres favoritter!</h3>
         <p>Dere har -- x antall -- film(er) felles i favorittlisten deres</p>
         <MovieCard />
     </>
