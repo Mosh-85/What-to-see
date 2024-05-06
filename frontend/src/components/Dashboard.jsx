@@ -3,10 +3,10 @@ import Gosafe from "./Gosafe"
 import Utforsk from "./Utforsk"
 
 
-export default function Dashboard() {
+export default function Dashboard({userName, user2Name}) {
     return (
     <>
-        <h1>FORSLAG FOR X OG X </h1>
+        <h1>Forslag for {userName} og {user2Name} </h1>
 
         <section className="catch">
             <Catchup />

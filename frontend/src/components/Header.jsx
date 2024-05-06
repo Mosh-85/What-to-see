@@ -4,12 +4,16 @@ import { Avatar } from "@mui/material"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
 import React from "react"
+import { useNavigate } from "react-router-dom"
+
+
 
 
 export default function Header({  setLogedIn, userName }) {
+  const [anchorEl, setAnchorEl] = React.useState(null)
+  const open = Boolean(anchorEl)
+  const navigate = useNavigate()
 
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
   }
@@ -19,10 +23,12 @@ export default function Header({  setLogedIn, userName }) {
   }
 
   const handleLogOut = () => {
-    localStorage.removeItem("loggedInUser");
-    localStorage.removeItem("loggedInUserName");
+    localStorage.removeItem("loggedInUser")
+    localStorage.removeItem("loggedInUserName")
     setLogedIn("")
-    handleClose() 
+    handleClose()
+    navigate("/")
+    //KILDE: https://www.geeksforgeeks.org/reactjs-usenavigate-hook/?ref=ml_lbp
   }
 
   return (
@@ -45,7 +51,7 @@ export default function Header({  setLogedIn, userName }) {
         open={open}
         onClose={handleClose}
       >
-        <MenuItem onClick={handleLogOut}>Logout</MenuItem>
+        <MenuItem onClick={handleLogOut} >Logout</MenuItem>
       </Menu> 
       </nav>
     </header>

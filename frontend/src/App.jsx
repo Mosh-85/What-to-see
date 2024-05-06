@@ -13,8 +13,11 @@ function App() {
   const [logedIn, setLogedIn] = useState(false);
   const userId = localStorage.getItem("loggedInUser");
   const userName = localStorage.getItem("loggedInUserName");
+  const user2Id = localStorage.getItem("loggedInUser2");
+  const user2Name = localStorage.getItem("loggedInUserName2");
+  localStorage.setItem("loggedInUser2", "Pelle");/*  Sett inn user._id */
+  localStorage.setItem("loggedInUserName2", "Pelle"); /* sett inn user.name */
 
-  
 
   return (
     <>
@@ -26,8 +29,7 @@ function App() {
         />
         <Route path="/moviecard" element={<MovieCard />} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
-        <Route path="/genres" element={<Genres />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} />} />
       </Routes>
       <Footer />
     </>
