@@ -9,7 +9,7 @@ export default function MovieCard({title, imdbId}) {
 
     const [IMDbImage, setIMDbImage] = useState();
 
-    const fetchIMDbImage = async (movieId) => {
+    const fetchIMDbImage = async (imdbId) => {
 
         const url = `'https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList=%3CREQUIRED%3E'${imdbId}`;
         try {
