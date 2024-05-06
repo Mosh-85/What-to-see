@@ -4,7 +4,7 @@ import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
 
 
-export default function Home({ logedIn, setLogedIn }) {
+export default function Home({ logedIn, setLogedIn, setUserId }) {
   const [users, setUsers] = useState([]);
 
   const getAllUsers = async () => {
@@ -25,7 +25,7 @@ export default function Home({ logedIn, setLogedIn }) {
           <p>Welcome: {logedIn}</p>
         </>
       ) : (
-        <Login users={users} setLogedIn={setLogedIn} />
+        <Login users={users} setLogedIn={setLogedIn} setUserId={setUserId} />
       )}
     </section>
   )

@@ -6,8 +6,7 @@ import MenuItem from "@mui/material/MenuItem"
 import React from "react"
 
 
-export default function Header({ logedIn, setLogedIn }) {
-  const user = localStorage.getItem("loggedInUserName")
+export default function Header({  setLogedIn, userName }) {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -38,7 +37,7 @@ export default function Header({ logedIn, setLogedIn }) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
-       <Avatar className="avatar">{user}</Avatar>
+       <Avatar className="avatar">{userName}</Avatar>
       </Button>
       <Menu 
         aria-labelledby="demo-positioned-button"

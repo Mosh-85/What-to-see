@@ -1,4 +1,4 @@
-import {client} from "../client"
+import { client } from "../client"
 
 export async function fetchAllGenres() {
     const data = await client.fetch(`*[_type == "genres"]{
@@ -7,3 +7,5 @@ export async function fetchAllGenres() {
     }`)
     return data
 }
+
+
