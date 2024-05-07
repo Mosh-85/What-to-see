@@ -1,10 +1,12 @@
 import React from "react";
 import Login from "./Login";
+import Userprofile from "./Userprofile";
 import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
 
 
-export default function Home({ logedIn, setLogedIn, setUserId }) {
+
+export default function Home({ setLogedIn, setUserId, userName, user2Name,userId }) {
   const [users, setUsers] = useState([]);
 
   const getAllUsers = async () => {
@@ -20,9 +22,9 @@ export default function Home({ logedIn, setLogedIn, setUserId }) {
 
   return (
     <section>
-      {logedIn ? (
+      {userName = localStorage.getItem("loggedInUser") ? (
         <>
-          <p>Welcome: {logedIn}</p>
+          <Userprofile userName={userName} user2Name={user2Name} users={users} setLogedIn={setLogedIn} userId={userId}/>
         </>
       ) : (
         <Login users={users} setLogedIn={setLogedIn} setUserId={setUserId} />

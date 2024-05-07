@@ -16,6 +16,20 @@ export async function fetchFavGenres(userId) {
     return data
 }
 
+export async function fetchFavMovies(userId) {
+    const data = await client.fetch(`*[_type == "users" && _id == "${userId}"]{
+        "favorittemovies": favorittemovies[] -> {title, imdbid}
+    }`)
+    return data
+}
+
+
+export async function fetchFavWish(userId) {
+    const data = await client.fetch(`*[_type == "users" && _id == "${userId}"]{
+        "wishlist": wishlist[]._ref
+    }`)
+    return data
+}
 
 export async function writeClientGenres(userId, favGenres) {
     const data = await writeClient.patch('users', userId)

@@ -5,8 +5,8 @@ export default function Login({ users, setLogedIn}) {
 
   return (
     <article className="login">
-      <h3>Who is watching today?</h3>
-      <p>Choose a profile</p>
+      <h3>Hvem skal se i dag?</h3>
+      <p>Velg bruker</p>
 
       <ul>
         {users.map((user, i) => (
