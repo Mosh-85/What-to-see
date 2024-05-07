@@ -20,7 +20,7 @@ const getCommonMovies = () => {
         {commonMovies?.map((movie, index) => (
           <li key={index}>
             <h3>{movie.title}</h3>
-            <p>{movie.overview}</p>
+            
             <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
           </li>
         ))}
