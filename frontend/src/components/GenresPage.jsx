@@ -4,22 +4,20 @@ import { useParams} from "react-router-dom";
 export default function GenresPage() {
 
     const { slug } = useParams();
-     const [genre, setGenre] = useState(null);
+    const [genre, setGenre] = useState(null);
   
-    const getProductBySlug = async (slug) => {
+    const getMoviesBySlug = async (slug) => {
       const data = await fetchGenreBySlug(slug);
       setGenre(data[0]);
     };
   
     useEffect(() => {
-      getProductBySlug(slug);
+      getMoviesBySlug(slug);
     }, [slug]);
-
-    console.log(genre);
 
     return (
         <section>
-            <h1>test genres</h1>
+            <h1>{slug}</h1>
         </section>
 
 
