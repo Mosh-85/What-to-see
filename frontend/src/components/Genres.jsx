@@ -4,6 +4,7 @@ import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
 import { fetchAllGenres } from "../../sanity/services.js/genreServices";
 import { addFavGenre, fetchFavGenres, removeFavGenre } from "../../sanity/services.js/userServices";
+import { Link } from "react-router-dom";
 
 export default function Genres({ userId }) {
   const [genres, setGenres] = useState([]);
@@ -43,6 +44,7 @@ export default function Genres({ userId }) {
   };
 
 
+
   return (
     <section>
       <h1>Genres</h1>
@@ -50,7 +52,9 @@ export default function Genres({ userId }) {
       <ul>
         {genres.map((genre) => (
           <li key={genre._id}>
+            <Link to={`/genres/${genre.genreslug}`}>  {/* ${genre.slug} */}
             {genre.name}
+            </Link>
             <Checkbox
               {...label}
               icon={<FavoriteBorder />}

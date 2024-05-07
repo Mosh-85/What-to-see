@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom"
 
 
 
-export default function Header({  setLogedIn, userName }) {
+export default function Header({ setLogedIn, userName }) {
   const [anchorEl, setAnchorEl] = React.useState(null)
   const open = Boolean(anchorEl)
   const navigate = useNavigate()
@@ -36,9 +36,9 @@ export default function Header({  setLogedIn, userName }) {
   return (
     <header className="header">
       <nav>
-        <Button className="logo" href="./">What To See?</Button>
-        <Button className="whattosee" startIcon={<TvIcon/>} href="./" >Hva skal jeg se?</Button>
-        <Button className="genre" href="./Genres">Bla gjennom sjangere</Button>
+        <Button className="logo" href="/">What To See?</Button>
+        <Button className="whattosee" startIcon={<TvIcon/>} href="/" >Hva skal jeg se?</Button>
+        <Button className="genre" href="/genres">Bla gjennom sjangere</Button>
         <Button className="user" 
         aria-controls={open ? 'demo-positioned-menu' : undefined}
         aria-haspopup="true"
