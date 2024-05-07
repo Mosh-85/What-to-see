@@ -25,7 +25,7 @@ function App() {
         <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
         <Route path="/genres/:slug" element={<GenresPage />} />
-        <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} />} />
+        <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} userId={userId} user2Id={user2Id} />} />
       </Routes>
       <Footer />
     </>
