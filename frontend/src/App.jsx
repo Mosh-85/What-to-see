@@ -18,6 +18,7 @@ function App() {
   const user2Name = localStorage.getItem("loggedInUserName2");
 
 
+
   return (
     <>
       <Header setLogedIn={setLogedIn} userName={userName} />
@@ -28,7 +29,7 @@ function App() {
         />
         <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
-        <Route path="/genres/:slug" element={<GenresPage/>} />
+        <Route path="/genres/:slug" element={<GenresPage />} />
         <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} />} />
       </Routes>
       <Footer />
