@@ -9,12 +9,15 @@ export async function fetchAllGenres() {
   return data
 }
 
-export async function fetchMoviesBySlug(slug) {
-  const data = await client.fetch(`*[_type == "genres" && categoryurl.current == $slug]{
-      _id,
-        name,
-      }
-    }`, { slug });
+export async function fetchMoviesBySlug(upperslug) {
+  const data = await client.fetch(`*[_type == "movies" && "${upperslug}" in genres[]->name] {
+    _id,
+    title,
+    imdbid,
+    "genres": genres[]-> {
+      name
+    }
+  }`, { upperslug });
   return data;
 }
 
