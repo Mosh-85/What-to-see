@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 
-export default function Home({ setLogedIn, setUserId, userName, user2Name,userId }) {
+export default function Home({ setLogedIn, userName, user2Name,userId }) {
   const [users, setUsers] = useState([]);
 
   const getAllUsers = async () => {
@@ -27,7 +27,7 @@ export default function Home({ setLogedIn, setUserId, userName, user2Name,userId
           <Userprofile userName={userName} user2Name={user2Name} users={users} setLogedIn={setLogedIn} userId={userId}/>
         </>
       ) : (
-        <Login users={users} setLogedIn={setLogedIn} setUserId={setUserId} />
+        <Login users={users} setLogedIn={setLogedIn} />
       )}
     </section>
   )
