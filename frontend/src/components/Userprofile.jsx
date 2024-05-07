@@ -1,5 +1,6 @@
 import Loginfriend from "./Loginfriend"
 import MovieCard from "./MovieCard"
+import { Button } from "@mui/material"
 
 
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
@@ -15,6 +16,14 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
             {user2Name = localStorage.getItem("loggedInUser2") ? (
                 <>
                     <h4>Du ser med: {user2Name}</h4>
+                    <Button
+                        onClick={() => {
+                        localStorage.removeItem("loggedInUser2");
+                        localStorage.removeItem("loggedInUserName2");
+                        setLogedIn("");
+                    }}>
+                        Bytt venn
+                    </Button>
                 </>
             ) : (
                     <Loginfriend users={users} setLogedIn={setLogedIn}/>

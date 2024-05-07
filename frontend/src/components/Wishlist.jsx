@@ -25,7 +25,6 @@ export default function Wishlist({userId, user2Id}) {
     fetchData();
    }, [user2Id]);
 
-
     return (
     <>
         <h3>Deres ønskeliste!</h3>
