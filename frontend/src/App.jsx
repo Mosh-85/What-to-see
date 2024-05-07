@@ -8,6 +8,7 @@ import { useState } from "react";
 import Genres from "./components/Genres";
 import MovieCard from "./components/MovieCard";
 import Dashboard from "./components/Dashboard";
+import GenresPage from "./components/GenresPage";
 
 function App() {
   const [logedIn, setLogedIn] = useState(false);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/"element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}/>
         <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
+        <Route path="/genres/:slug" element={<GenresPage/>} />
         <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} />} />
       </Routes>
       <Footer />
