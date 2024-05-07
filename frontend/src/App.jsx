@@ -23,13 +23,10 @@ function App() {
     <>
       <Header setLogedIn={setLogedIn} userName={userName} />
       <Routes>
-        <Route
-          path="/"
-          element={<Home userName={userName} user2Name={user2Name} setLogedIn={setLogedIn} userId={userId} />}
-        />
+        <Route path="/"element={<Home logedIn={logedIn} setLogedIn={setLogedIn} />}/>
         <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
-        <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} />} />
+        <Route path="/dashboard" element={<Dashboard userId={userId} user2Id={user2Id} userName={userName} user2Name={user2Name} />} />
       </Routes>
       <Footer />
     </>
