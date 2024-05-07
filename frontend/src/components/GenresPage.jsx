@@ -21,7 +21,7 @@ export default function GenresPage() {
       const listMoviesByGenre = moviesByGenre?.map((movies, index) => {
         return (
           <li key={index}>
-            <img src={movies.title} alt={movies.title + " " + "bilde"} />
+            <img src={movies.imdbid} alt={movies.title + " " + "bilde"} />
             <a href={`https://www.imdb.com/title/${movies.imdbid}`}> {movies.title}</a> 
           </li>
         )
