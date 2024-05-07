@@ -8,7 +8,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
         <h3>Velkommen: {userName}</h3>
         <article>
             <p>Filmer jeg skal se!</p>
-            <p>Disse filmene ligger ønskelisten din:</p>
+            <p>Disse filmene ligger i ønskelisten din:</p>
             <MovieCard userId={userId}/> 
         </article>
         <article>
