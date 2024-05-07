@@ -17,16 +17,11 @@ function App() {
   const user2Id = localStorage.getItem("loggedInUser2");
   const user2Name = localStorage.getItem("loggedInUserName2");
 
-
-
   return (
     <>
       <Header setLogedIn={setLogedIn} userName={userName} />
       <Routes>
-        <Route
-          path="/"
-          element={<Home userName={userName} user2Name={user2Name} setLogedIn={setLogedIn} userId={userId} />}
-        />
+        <Route path="/" element={<Home userName={userName} user2Name={user2Name} setLogedIn={setLogedIn} userId={userId} />}/>
         <Route path="/moviecard" element={<MovieCard userId={userId}/>} />
         <Route path="/genres" element={<Genres userId={userId}/>} />
         <Route path="/genres/:slug" element={<GenresPage />} />
@@ -36,5 +31,4 @@ function App() {
     </>
   );
 }
-
 export default App;

@@ -1,28 +1,28 @@
-import React from 'react'
+/* import React from 'react'
 
-export default function MovieCard({Movies, Movies2}) {
+export default function MovieCard({ Movies, Movies2 }) {
 
-    const favorite = Movies?.map((movies, index) => {
-      return (
-        <li key={index}>
-          <h2>{movies.title}</h2>
-        </li>
-      )
-    }) 
-
-    const favorite2 = Movies2?.map((movies, index) => {
-      return (
-        <li key={index}>
-          <h2>{movies.title}</h2>
-        </li>
-      )
-    }) 
-    
-    return (
-      <div>
-        <ul> {favorite} </ul>
-        <ul> {favorite2} </ul>
-      </div>
-    )
+  const getCommonMovies = () => {
+    return Movies.filter(movie1 => Movies2.some(movie2 => movie2.title === movie1.title))
   }
-  
+
+
+  const commonMovies = getCommonMovies();
+  console.log(commonMovies) 
+ 
+
+  return (
+    <>
+    <h1>MovieCard</h1>
+    <ul>
+        {commonMovies.map((movie, index) => (
+          <li key={index}>
+            <h3>{movie.title}</h3>
+            <p>{movie.overview}</p>
+            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
+          </li>
+        ))}
+      </ul>
+    </>
+  )
+} */
