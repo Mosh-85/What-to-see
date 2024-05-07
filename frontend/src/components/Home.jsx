@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 
 
 
-export default function Home({ setLogedIn, setUserId, userName, user2Name }) {
+export default function Home({ setLogedIn, setUserId, userName, user2Name,userId }) {
   const [users, setUsers] = useState([]);
 
   const getAllUsers = async () => {
@@ -24,7 +24,7 @@ export default function Home({ setLogedIn, setUserId, userName, user2Name }) {
     <section>
       {userName = localStorage.getItem("loggedInUser") ? (
         <>
-          <Userprofile userName={userName} user2Name={user2Name} users={users} setLogedIn={setLogedIn}/>
+          <Userprofile userName={userName} user2Name={user2Name} users={users} setLogedIn={setLogedIn} userId={userId}/>
         </>
       ) : (
         <Login users={users} setLogedIn={setLogedIn} setUserId={setUserId} />

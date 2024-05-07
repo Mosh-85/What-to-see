@@ -1,16 +1,15 @@
 import Loginfriend from "./Loginfriend"
+import MovieCard from "./MovieCard"
 
-export default function Userprofile({userName, user2Name, users, setLogedIn}) {
+
+export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
     return (
     <>
         <h3>Velkommen: {userName}</h3>
         <article>
             <p>Filmer jeg skal se!</p>
-            <p>mappas her</p>
-        </article>
-        <article>
-        <p>Disse filmerne ligger i ønskelisten din.</p>
-        <p>mappas her</p>
+            <p>Disse filmene ligger øsnkelista din:</p>
+            <MovieCard userId={userId}/> 
         </article>
         <article>
             {user2Name = localStorage.getItem("loggedInUser2") ? (
