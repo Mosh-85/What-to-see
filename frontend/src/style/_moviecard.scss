@@ -1,0 +1,31 @@
+/* src/MovieCard.css */
+.movie-card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 10px;
+  }
+  
+  .movie-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .movie-info {
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .movie-title {
+    margin: 0;
+    font-size: 1.1em;
+  }
+  
+  .movie-year {
+    color: #666;
+    font-size: 0.9em;
+  }
+  

@@ -1,6 +1,6 @@
 import Commonwishlist from "./Commonwishlist"
-/* import Favoritlist from "./Favoritlist"
-import Utforsk from "./Utforsk" */
+import Favoritlist from "./Favoritlist"
+/* import Utforsk from "./Utforsk" */
 
 
 export default function Dashboard({userName, user2Name, userId, user2Id}) {
@@ -12,9 +12,9 @@ export default function Dashboard({userName, user2Name, userId, user2Id}) {
             <Commonwishlist userId={userId} user2Id={user2Id} />
         </section>
 
- {/*     <section className="gosafe">
+      <section className="gosafe">
             <Favoritlist userId={userId} user2Id={user2Id} />
-        </section> */}
+        </section> 
 
 {/*         <section className="utforsk">
             <Utforsk/>

@@ -1,17 +1,51 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export default function MovieCard({ movies, index }) {
-  const search = movies.imdbid 
 
- 
+    const [api, setApi] = useState();
+
+
+    const search = movies?.imdbid;
+
+    const fetchApiSearch = async () => {
+
+        const url = `https://moviesdatabase.p.rapidapi.com/titles/${search}`;
+        const apiClient = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': 'fc7dd7c2a8msh7cb81de38856fa6p156d39jsnda84878f5c7f',
+                'x-rapidapi-host': 'moviesdatabase.p.rapidapi.com'
+            }
+        }
+        try {
+            const response = await fetch(url,apiClient);
+            const data = await response.json();
+            setApi(
+                {
+                title: data.results.titleText.text,
+                image: data.results.primaryImage.url,
+                release: data.results.releaseYear.year
+            })
+        } catch (error) { console
+            .error(error);
+        }
+
+    }
+
+    useEffect(() => {
+        fetchApiSearch(movies.imdbId);
+    }, [movies.imdbId])
+
+
+
 
   return (
     <>
       <ul>
         <li key={index}>
-        <img src={movies.imdbid} alt={movies.title + " " + "bilde"} />
-        <a href={`https://www.imdb.com/title/${movies.imdbid}`}> {movies.title}</a> 
+        <img src={api?.image} alt={api?.title + " " + "bilde"} />
+        <a href={`https://www.imdb.com/title/${movies?.imdbid}`}> {api?.title} ({api?.release})</a> 
         </li>
       </ul>
     </>

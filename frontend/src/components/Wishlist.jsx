@@ -23,14 +23,10 @@ export default function Wishlist({userId}) {
 
 
     return (
-    <>
-        <h3>Deres ønskeliste!</h3>
-        <p>Dere har -- x antall -- film(er) felles i ønskelisten deres</p>
-        
-            <li>
-                {listWishMovies}
-            </li>
-        
+    <>  
+        <li>
+            {listWishMovies}
+        </li>
     </>
     )
 }
