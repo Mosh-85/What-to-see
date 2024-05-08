@@ -1,27 +1,34 @@
-import React from 'react'
-import  { apiClient } from '../services/apiClient'
-import { useEffect, useState } from 'react'
-import { getMovieData, getMoviesData } from '../services/apiServices'
+import { Link } from "react-router-dom";
+import { useState } from "react";
+
+export default function MovieCard({movie, }) {
 
 
-export default function MovieCard({ movie }) {
+    const [imdbImage] = useState({
+        url: movie.primaryImage?.url,
+        caption: movie.primaryImage?.caption?.plainText
+    })
 
-const getmovie = async (imdbID) => {
-    const url = `https://moviesdatabase.p.rapidapi.com/titles/${imdbID}`
-    return await fetch(url, apiClient)
-    .then(response => response.json())
-    .catch(error => console.error(error))
-    
+
+    return (
+        <article className={className}>
+            {(imdbImage.url) ?
+            (<Link to={`https://www.imdb.com/title/${movie?.id}`}>
+                <picture>
+                    <source media="(min-width:300px)" srcSet={imdbImage?.url}/>
+                    <img src={imdbImage?.url} alt={imdbImage?.caption}  width="300" height="420"></img>
+                </picture>
+            </Link>)
+            :
+            (
+            <picture>
+                <source media="(min-width:300px)" srcSet="../../public/ImageNotFound.png"/>
+                <img src={"ImageNotFound.png"} alt="Denne filmen har ikke bilde"  width="300" height="420"></img>
+            </picture>)}
+            <Link className="movieCardTitle" to={`https://www.imdb.com/title/${movie?.id}`}>
+                {movie?.titleText?.text}
+            </Link>
+        </article>
+        
+    )
 }
-const getMoviesData = async (moviesList) => {
-    const moviesData = []
-    for (const movie of moviesList) {
-        const movieData = await getMovieData(movie.imdbid); 
-        moviesData.push(movieData.results)
-    }
-    return moviesData
-    
-    
-
-}
-
