@@ -32,7 +32,7 @@ export default function MovieCard({ movies, index }) {
       <ul>
         <li key={index}>
         <img src={movies.imdbid} alt={movies.title + " " + "bilde"} />
-        <a href={`https://www.imdb.com/title/${movies.imdbid}`}> {movies.title}</a> 
+        <a href={`https://www.imdb.com/title/${movies.imdbid}`} target="_blank"> {movies.title}</a> 
         </li>
       </ul>
     </>
