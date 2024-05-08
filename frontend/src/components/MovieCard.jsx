@@ -1,8 +1,11 @@
 import React from 'react'
+/* import apiClient from '../imdbapi/apiClient';
+import { useEffect, useState } from 'react'; */
+
 
 export default function MovieCard({ movies, index }) {
 
-    const [imdbImage, setImdImage] = useState();
+    /* const [imdbImage, setImdImage] = useState();
 
     const fetchImdImage = async (movieId) => {
 
@@ -25,7 +28,7 @@ export default function MovieCard({ movies, index }) {
         fetchImdImage(movies.imdbId);
     }, [movies.imdbId])
 
-    console.log(imdbImage);
+    console.log(imdbImage); */
 
   return (
     <>
