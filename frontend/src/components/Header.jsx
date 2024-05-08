@@ -45,6 +45,7 @@ export default function Header({ setLogedIn, userName }) {
         aria-expanded={open ? 'true' : undefined}
         onClick={handleClick}
       >
+
        <Avatar className="avatar">{userName}</Avatar>
       </Button>
       <Menu 
