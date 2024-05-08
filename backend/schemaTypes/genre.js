@@ -7,6 +7,17 @@ export const genre = {
         title: "Name",
         name: "name",
         type: "string",
-    }
-],
-    };
+        },
+        {
+        title: "Genrelink",
+        name: "genreurl",
+        type: "slug",
+        options: {
+            source: "name",
+            slugify: input => input
+            .toLowerCase()
+            .replace(/\s+/g, "-")
+            },
+        }
+    ],
+}

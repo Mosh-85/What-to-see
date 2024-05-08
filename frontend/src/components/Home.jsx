@@ -1,5 +1,6 @@
 import React from "react";
 import Login from "./Login";
+import Userprofile from "./Userprofile";
 import { fetchAllUsers } from "../../sanity/services.js/userServices";
 import { useEffect, useState } from "react";
 import { apiClient } from "../../imdbapi/apiClient";
@@ -7,7 +8,8 @@ import { apiClient } from "../../imdbapi/apiClient";
 
 
 
-export default function Home({ logedIn, setLogedIn }) {
+
+export default function Home({ setLogedIn, userName, user2Name,userId }) {
   const [users, setUsers] = useState([]);
 
   const getAllUsers = async () => {
@@ -23,9 +25,9 @@ export default function Home({ logedIn, setLogedIn }) {
 
   return (
     <section>
-      {logedIn ? (
+      {userName = localStorage.getItem("loggedInUser") ? (
         <>
-          <p>Welcome: {logedIn}</p>
+          <Userprofile userName={userName} user2Name={user2Name} users={users} setLogedIn={setLogedIn} userId={userId}/>
         </>
       ) : (
         <Login users={users} setLogedIn={setLogedIn} />

@@ -2,54 +2,65 @@ import { useEffect, useState } from "react";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
-import { fetchFavGenres } from "../../sanity/services.js/userServices";
 import { fetchAllGenres } from "../../sanity/services.js/genreServices";
+import { addFavGenre, fetchFavGenres, removeFavGenre } from "../../sanity/services.js/userServices";
+import { Link } from "react-router-dom";
 
-export default function Genres() {
+export default function Genres({ userId }) {
   const [genres, setGenres] = useState([]);
   const [favGenres, setFavGenres] = useState([]);
-
+  const [formMessage, setFormMessage] = useState("");
   const label = { inputProps: { "aria-label": "Fav-Toggle" } };
+  
 
   useEffect(() => {
     const fetchData = async () => {
       const allGenres = await fetchAllGenres();
       setGenres(allGenres);
 
-      const favGenres = await fetchFavGenres();
-      setFavGenres(favGenres[0].favoriteGenres);
+      const favGenresData = await fetchFavGenres(userId);
+      setFavGenres(favGenresData[0].favoriteGenres);
+    };
+
+    fetchData();
+  }, [userId]);
+
+
+  const handleCheckboxChange = async (e, genreId) => {
+    e.preventDefault();
+    try {
+      if (favGenres.includes(genreId)) {
+        await removeFavGenre(userId, genreId);
+        setFavGenres(favGenres.filter(id => id !== genreId));
+        setFormMessage("Genre removed from favorites.");
+      } else {
+        await addFavGenre(userId, genreId);
+        setFavGenres([...favGenres, genreId]);
+        setFormMessage("Genre added to favorites.");
+      }
+    } catch (error) {
+      setFormMessage("Error updating favorites. Please try again.");
+    }
   };
 
-  fetchData();
-  }, []);
-  
-
-
-  const handleCheckboxChange = (genreId) => {
-    const updatedFavGenres = favGenres.includes(genreId)
-      ? favGenres.filter((id) => id !== genreId)
-      : [...favGenres, genreId];
-    
-    setFavGenres(updatedFavGenres);
-  };
-
-
-  console.log(favGenres);
 
 
   return (
     <section>
       <h1>Genres</h1>
+      <p>{formMessage}</p>
       <ul>
-        {genres.map(( genre) => (
+        {genres.map((genre) => (
           <li key={genre._id}>
+            <Link to={`/genres/${genre.genreslug}`}>  {/* ${genre.slug} */}
             {genre.name}
+            </Link>
             <Checkbox
               {...label}
               icon={<FavoriteBorder />}
               checkedIcon={<Favorite />}
               checked={favGenres.includes(genre._id)}
-              onChange={() => handleCheckboxChange(genre._id)}
+              onChange={(e) => handleCheckboxChange(e, genre._id)}
             />
           </li>
         ))}
