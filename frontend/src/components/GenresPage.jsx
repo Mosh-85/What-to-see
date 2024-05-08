@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useParams} from "react-router-dom";
 import { fetchMoviesBySlug } from "../../sanity/services.js/genreServices";
+import MovieCard from "./MovieCard";
 
 export default function GenresPage() {
 
@@ -20,10 +21,7 @@ export default function GenresPage() {
 
       const listMoviesByGenre = moviesByGenre?.map((movies, index) => {
         return (
-          <li key={index}>
-            <img src={movies.imdbid} alt={movies.title + " " + "bilde"} />
-            <a href={`https://www.imdb.com/title/${movies.imdbid}`}> {movies.title}</a> 
-          </li>
+         <MovieCard movies={movies} index={index} />
         )
       }) 
 
