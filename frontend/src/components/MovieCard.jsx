@@ -1,22 +1,31 @@
 import React from 'react'
-import apiClient from '../imdbapi/apiClient';
-import { useEffect, useState } from 'react';
-
+import { useState, useEffect } from 'react';
 
 export default function MovieCard({ movies, index }) {
 
-    const [imdbImage, setImdImage] = useState();
+    const [api, setApi] = useState();
 
-    const fetchImdImage = async (movieId) => {
 
-        const url = `https://moviesdatabase.p.rapidapi.com/titles/${movies.imdbId}`;
+    const search = movies?.imdbid;
+
+    const fetchApiSearch = async () => {
+
+        const url = `https://moviesdatabase.p.rapidapi.com/titles/${search}`;
+        const apiClient = {
+            method: 'GET',
+            headers: {
+                'x-rapidapi-key': 'fc7dd7c2a8msh7cb81de38856fa6p156d39jsnda84878f5c7f',
+                'x-rapidapi-host': 'moviesdatabase.p.rapidapi.com'
+            }
+        }
         try {
             const response = await fetch(url,apiClient);
-            const result = await response.json();
-            setImdImage(
+            const data = await response.json();
+            setApi(
                 {
-                title: result.results.titleText.text,
-                image: result.results.primaryImage.url
+                title: data.results.titleText.text,
+                image: data.results.primaryImage.url,
+                release: data.results.releaseYear.year
             })
         } catch (error) { console
             .error(error);
@@ -25,17 +34,18 @@ export default function MovieCard({ movies, index }) {
     }
 
     useEffect(() => {
-        fetchImdImage(movies.imdbId);
+        fetchApiSearch(movies.imdbId);
     }, [movies.imdbId])
 
-    console.log(imdbImage);
+
+
 
   return (
     <>
       <ul>
         <li key={index}>
-        <img src={movies.imdbid} alt={movies.title + " " + "bilde"} />
-        <a href={`https://www.imdb.com/title/${movies.imdbid}`} target="_blank"> {movies.title}</a> 
+        <img src={api?.image} alt={api?.title + " " + "bilde"} />
+        <a href={`https://www.imdb.com/title/${movies?.imdbid}`}> {api?.title} ({api?.release})</a> 
         </li>
       </ul>
     </>
