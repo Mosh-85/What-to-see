@@ -11,11 +11,13 @@ export async function fetchAllUsers() {
 
 export async function fetchFavGenres(userId) {
     const data = await client.fetch(`*[_type == "users" && _id == "${userId}"]{
-        "favoriteGenres": favoritgenres[]._ref
-        "favoriteGenresName": favoritgenres[] -> {name}
+        "favoriteGenres": favoritgenres[]._ref,
+        "favoriteGenresName": favoritgenres[]  -> {name},
+        "genreslugs": favoritgenres[] -> genreurl.current
     }`)
     return data
 }
+
 
 export async function fetchFavMovies(userId) {
     const data = await client.fetch(`*[_type == "users" && _id == "${userId}"]{

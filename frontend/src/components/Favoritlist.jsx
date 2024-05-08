@@ -35,22 +35,22 @@ export default function Favoritlist({userId, user2Id}) {
     
     
        return (
-        <section>
+        <article>
             {listCommonFavMovies && (
         <>
           
             <h3>Go Safe!</h3>
             <p>Dere har {listCommonFavMovies.length} film(er) felles i favorittlisten deres</p>
             
-                <li>
-                    {listCommonFavMovies}
-                </li>
+
+            {listCommonFavMovies}
+
     
     
             
         </>
     )}
-        </section>
+        </article>
         )
 
 }

@@ -52,7 +52,7 @@ export default function Genres({ userId }) {
       <ul>
         {genres.map((genre) => (
           <li key={genre._id}>
-            <Link to={`/genres/${genre.genreslug}`}>  {/* ${genre.slug} */}
+            <Link to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>
             <Checkbox

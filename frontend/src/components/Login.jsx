@@ -4,7 +4,7 @@ export default function Login({ users, setLogedIn}) {
   
 
   return (
-    <article className="login">
+    <section className="login">
       <h3>Hvem skal se i dag?</h3>
       <p>Velg bruker</p>
 
@@ -24,6 +24,6 @@ export default function Login({ users, setLogedIn}) {
           </li>
         ))}
       </ul>
-    </article>
+    </section>
   );
 }

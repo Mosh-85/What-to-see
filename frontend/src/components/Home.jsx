@@ -21,7 +21,7 @@ export default function Home({ setLogedIn, userName, user2Name,userId }) {
 
 
   return (
-    <section>
+    <main>
       {userName = localStorage.getItem("loggedInUser") ? (
         <>
           <Userprofile userName={userName} user2Name={user2Name} users={users} setLogedIn={setLogedIn} userId={userId}/>
@@ -29,7 +29,7 @@ export default function Home({ setLogedIn, userName, user2Name,userId }) {
       ) : (
         <Login users={users} setLogedIn={setLogedIn} />
       )}
-    </section>
+    </main>
   )
 }
 
