@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react';
 
 export default function MovieCard({ movies, index }) {
 
-    const [imdbImage, setImdbImage] = useState();
+    const [api, setApi] = useState();
 
 
     const search = movies?.imdbid;
 
-    const fetchImdbImage = async () => {
+    const fetchApiSearch = async () => {
 
         const url = `https://moviesdatabase.p.rapidapi.com/titles/${search}`;
         const apiClient = {
@@ -21,7 +21,7 @@ export default function MovieCard({ movies, index }) {
         try {
             const response = await fetch(url,apiClient);
             const data = await response.json();
-            setImdbImage(
+            setApi(
                 {
                 title: data.results.titleText.text,
                 image: data.results.primaryImage.url,
@@ -34,7 +34,7 @@ export default function MovieCard({ movies, index }) {
     }
 
     useEffect(() => {
-        fetchImdbImage(movies.imdbId);
+        fetchApiSearch(movies.imdbId);
     }, [movies.imdbId])
 
 
@@ -44,8 +44,8 @@ export default function MovieCard({ movies, index }) {
     <>
       <ul>
         <li key={index}>
-        <img src={imdbImage?.image} alt={movies?.title + " " + "bilde"} />
-        <a href={`https://www.imdb.com/title/${movies?.imdbid}`}> {imdbImage?.title} ({imdbImage?.release})</a> 
+        <img src={api?.image} alt={api?.title + " " + "bilde"} />
+        <a href={`https://www.imdb.com/title/${movies?.imdbid}`}> {api?.title} ({api?.release})</a> 
         </li>
       </ul>
     </>
