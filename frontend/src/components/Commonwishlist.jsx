@@ -37,22 +37,24 @@ export default function Commonwishlist({userId, user2Id}) {
 
 
    return (
-    <section>
+    <article>
         {listCommonWishMovies && (
     <>
       
         <h3>Deres ønskeliste!</h3>
         <p>Dere har {listCommonWishMovies.length} film(er) felles i ønskelisten deres</p>
+        <ul>
+        {listCommonWishMovies}
+
+        </ul>
         
-            <li>
-                {listCommonWishMovies}
-            </li>
+    
 
 
         
     </>
 )}
-    </section>
+    </article>
     )
 }
 

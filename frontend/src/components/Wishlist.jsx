@@ -24,9 +24,9 @@ export default function Wishlist({userId}) {
 
     return (
     <>  
-        <li>
+       
             {listWishMovies}
-        </li>
+        
     </>
     )
 }

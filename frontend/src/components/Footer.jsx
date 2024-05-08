@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
-    <article className="footer">
+    <footer className="footer">
     <p>Copyright 2024</p>
 
-  </article>
+  </footer>
   )
 }

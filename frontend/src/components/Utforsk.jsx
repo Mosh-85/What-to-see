@@ -42,7 +42,7 @@ export default function Utforsk({userId, user2Id}) {
 
 
    return (
-    <section>
+    <article>
         {listCommonFavGenres && (
       <>
         <h3>FelleGenres!</h3>
@@ -51,6 +51,6 @@ export default function Utforsk({userId, user2Id}) {
 
       </>
 )}
-    </section>
+    </article>
     )
 }
