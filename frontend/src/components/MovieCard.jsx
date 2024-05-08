@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 
 export default function MovieCard({ movies, index }) {
+  const search = movies.imdbid 
 
  
 
