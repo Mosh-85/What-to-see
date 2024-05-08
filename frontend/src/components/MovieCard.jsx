@@ -49,6 +49,4 @@ export default function MovieCard({ Movies, Movies2 }) {
         <h1>{movie.title}</h1>
         <img src={movie.image} alt={movie.title} />
     </section> */
-  
-
 }
