@@ -33,21 +33,21 @@ export default function MovieCard({ movies, index }) {
 
     }
 
-    useEffect(() => {
-        fetchApiSearch(movies.imdbId);
-    }, [movies.imdbId])
+        useEffect(() => {
+            fetchApiSearch(movies.imdbId);
+        }, [movies.imdbId])
 
 
 
 
-  return (
-    <>
-      <ul>
-        <li key={index}>
-        <img src={api?.image} alt={api?.title + " " + "bilde"} />
-        <a href={`https://www.imdb.com/title/${movies?.imdbid}`}> {api?.title} ({api?.release})</a> 
-        </li>
-      </ul>
-    </>
-  )
-}
+      return (
+        <>
+          <ul>
+            <li key={index}>
+            <img src={api?.image} alt={api?.title + " " + "bilde"} />
+            <a href={`https://www.imdb.com/title/${movies?.imdbid}`} target="_blank"> {api?.title} ({api?.release})</a> 
+            </li>
+          </ul>
+        </>
+      )
+    }
