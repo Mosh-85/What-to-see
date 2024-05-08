@@ -25,13 +25,32 @@ export default function Favoritlist({userId, user2Id}) {
         fetchData();
        }, [user2Id]);
  
+       const listCommonFavMovies = FavMovies?.filter(movie1 =>
+        wishMovies2?.some(movie2 => movie2.title === movie1.title)
+      ).map((movies, index) => {
+        return (
+          <MovieCard movies={movies} index={index} key={index} />
+        );
+      });
+    
+    
+       return (
+        <section>
+            {listCommonFavMovies && (
+        <>
+          
+            <h3>Deres ønskeliste!</h3>
+            <p>Dere har {listCommonFavMovies.length} film(er) felles i ønskelisten deres</p>
+            
+                <li>
+                    {listCommonFavMovies}
+                </li>
+    
+    
+            
+        </>
+    )}
+        </section>
+        )
 
-    return (
-    <>
-    <h3>Deres favoritter!</h3>
-    <p>Dere har -- x antall -- film(er) felles i favorittlisten deres</p>
-    <MovieCard Movies={favMovies} />
-    <MovieCard Movies2={favMovies2}/>
-    </>
-    )
 }
