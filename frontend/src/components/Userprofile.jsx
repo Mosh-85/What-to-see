@@ -1,6 +1,7 @@
 import Loginfriend from "./Loginfriend"
 import MovieCard from "./MovieCard"
 import { Button } from "@mui/material"
+import Wishlist from "./Wishlist";
 
 
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
@@ -10,7 +11,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
         <article>
             <p>Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
-            <MovieCard userId={userId}/> 
+            <Wishlist userId={userId}/>
         </article>
         <article>
             {user2Name = localStorage.getItem("loggedInUser2") ? (
