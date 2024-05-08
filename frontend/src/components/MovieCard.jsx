@@ -1,29 +1,27 @@
 import React from 'react'
+import  { apiClient } from '../services/apiClient'
+import { useEffect, useState } from 'react'
+import { getMovieData, getMoviesData } from '../services/apiServices'
 
-export default function MovieCard({ Movies, Movies2 }) {
 
+export default function MovieCard({ movie }) {
 
-
-const getCommonMovies = () => {
-    return Movies?.filter(movie1 => Movies2?.some(movie2 => movie2.title === movie1.title))
-  }
-  
-  const commonMovies = getCommonMovies();
-  console.log("felles filmer", commonMovies) 
-  console.log("Movies", Movies)
-  console.log("Movies2", Movies2)
- 
-
-  return (
-    <>
-    <ul>
-        {commonMovies?.map((movie, index) => (
-          <li key={index}>
-            <h3>{movie.title}</h3>
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-          </li>
-        ))}
-      </ul>
-    </>
-  )
+const getmovie = async (imdbID) => {
+    const url = `https://moviesdatabase.p.rapidapi.com/titles/${imdbID}`
+    return await fetch(url, apiClient)
+    .then(response => response.json())
+    .catch(error => console.error(error))
+    
 }
+const getMoviesData = async (moviesList) => {
+    const moviesData = []
+    for (const movie of moviesList) {
+        const movieData = await getMovieData(movie.imdbid); 
+        moviesData.push(movieData.results)
+    }
+    return moviesData
+    
+    
+
+}
+
