@@ -1,17 +1,11 @@
 import { useState, useEffect } from 'react';
 import { fetchFavGenres } from '../../sanity/services.js/userServices';
+import { Link } from 'react-router-dom';
+
 
 export default function Utforsk({userId, user2Id}) {
-
     const [favGenres, setFavGenres] = useState(null)
     const [favGenres2, setFavGenres2] = useState(null)
-
-    console.log("Userid",userId)
-    console.log("User2id",user2Id)
-    console.log("FavGenres",favGenres)
-    console.log("FavGenres2",favGenres2)
-
-
 
     useEffect(() => { 
      const fetchData = async () => {
@@ -30,34 +24,32 @@ export default function Utforsk({userId, user2Id}) {
     fetchData();
    }, [user2Id]);
 
-   const listCommonFavGenres = favGenres?.filter(movie1 =>
-    favGenres2?.some(movie2 => movie2.title === movie1.title)
-  ).map((movies, index) => {
+   
+
+   const listCommonFavGenres = favGenres?.filter(genre1 =>
+    favGenres2?.some(genre2 => genre2.name === genre1.name)
+    ).map((genre, index) => {
     return (
       <ul>
-        <li>
-            {listCommonFavGenres}
+        <li key={index}>  
+          <Link to={`/genres/${genre.genreslug}`}>
+            {genre.name}
+          </Link>               
         </li>
       </ul>
     );
   });
-console.log(listCommonFavGenres)
+
 
    return (
     <section>
         {listCommonFavGenres && (
-    <>
-      
-        <h3>Deres ønskeliste!</h3>
-        <p>Dere har {listCommonFavGenres.length} film(er) felles i ønskelisten deres</p>
-        
-            <li>
-                {listCommonFavGenres}
-            </li>
+      <>
+        <h3>FelleGenres!</h3>
+        <p>Dere har {listCommonFavGenres.length} genres felles i ønskelisten deres</p>
+        {listCommonFavGenres}
 
-
-        
-    </>
+      </>
 )}
     </section>
     )
