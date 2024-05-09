@@ -12,8 +12,6 @@ export default function Genres({ userId }) {
   const [formMessage, setFormMessage] = useState("");
   const label = { inputProps: { "aria-label": "Fav-Toggle" } };
 
-  
-  console.log(genres)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -59,7 +57,7 @@ export default function Genres({ userId }) {
       <p>{formMessage}</p>
       <ul>
         {genres.map((genre) => (
-          <li key={genre.slug}>
+          <li key={genre.genreslug}>
             <Link to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>

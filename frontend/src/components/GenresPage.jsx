@@ -25,9 +25,6 @@ export default function GenresPage() {
         )
       }) 
 
-      console.log("listMoviesByGenre", listMoviesByGenre)
-
-
     return (
       <section>
         {listMoviesByGenre && (
