@@ -15,7 +15,7 @@ export default function Wishlist({userId}) {
      fetchData();
     }, [userId]);
 
-    const listWishMovies = wishMovies?.map((movies, index) => {
+    const listWishMovies = wishMovies?.sort((a, b) => a.title.localeCompare(b.title)).map((movies, index) => {
         return (
          <MovieCard movies={movies} index={index} key={index}/>
         )

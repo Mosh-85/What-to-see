@@ -27,7 +27,8 @@ export default function Favoritlist({userId, user2Id}) {
  
        const listCommonFavMovies = favMovies?.filter(movie1 =>
         favMovies2?.some(movie2 => movie2.title === movie1.title)
-      ).map((movies, index) => {
+      ).sort((a, b) => a.title.localeCompare(b.title))
+      .map((movies, index) => {
         return (
           <MovieCard movies={movies} index={index} key={index} />
         );

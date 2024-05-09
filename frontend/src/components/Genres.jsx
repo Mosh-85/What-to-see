@@ -11,12 +11,14 @@ export default function Genres({ userId }) {
   const [favGenres, setFavGenres] = useState([]);
   const [formMessage, setFormMessage] = useState("");
   const label = { inputProps: { "aria-label": "Fav-Toggle" } };
+
   
+  console.log(genres)
 
   useEffect(() => {
     const fetchData = async () => {
       const allGenres = await fetchAllGenres();
-      setGenres(allGenres);
+      setGenres(allGenres.sort((a, b) => a.name.localeCompare(b.name)));
 
       const favGenresData = await fetchFavGenres(userId);
       setFavGenres(favGenresData[0].favoriteGenres);
@@ -24,6 +26,9 @@ export default function Genres({ userId }) {
 
     fetchData();
   }, [userId]);
+  
+
+
 
 
   const handleCheckboxChange = async (e, genreId) => {
@@ -45,13 +50,16 @@ export default function Genres({ userId }) {
 
 
 
+
+
+
   return (
     <section>
       <h1>Genres</h1>
       <p>{formMessage}</p>
       <ul>
         {genres.map((genre) => (
-          <li key={genre._id}>
+          <li key={genre.slug}>
             <Link to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>

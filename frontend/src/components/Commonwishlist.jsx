@@ -29,7 +29,8 @@ export default function Commonwishlist({userId, user2Id}) {
 
    const listCommonWishMovies = wishMovies?.filter(movie1 =>
     wishMovies2?.some(movie2 => movie2.title === movie1.title)
-  ).map((movies, index) => {
+  ).sort((a, b) => a.title.localeCompare(b.title))
+  .map((movies, index) => {
     return (
       <MovieCard movies={movies} index={index} key={index} />
     );
