@@ -29,7 +29,8 @@ export default function Commonwishlist({userId, user2Id}) {
 
    const listCommonWishMovies = wishMovies?.filter(movie1 =>
     wishMovies2?.some(movie2 => movie2.title === movie1.title)
-  ).map((movies, index) => {
+  ).sort((a, b) => a.title.localeCompare(b.title))
+  .map((movies, index) => {
     return (
       <MovieCard movies={movies} index={index} key={index} />
     );
@@ -44,7 +45,7 @@ export default function Commonwishlist({userId, user2Id}) {
         <h3>Deres ønskeliste!</h3>
         <p>Dere har {listCommonWishMovies.length} film(er) felles i ønskelisten deres</p>
         <ul>
-        {listCommonWishMovies}
+        {listCommonWishMovies.length > 0 ? listCommonWishMovies : <p>Ingen felles filmer i ønskelisten</p>}
 
         </ul>
         

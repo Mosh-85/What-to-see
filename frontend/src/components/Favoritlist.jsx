@@ -27,7 +27,8 @@ export default function Favoritlist({userId, user2Id}) {
  
        const listCommonFavMovies = favMovies?.filter(movie1 =>
         favMovies2?.some(movie2 => movie2.title === movie1.title)
-      ).map((movies, index) => {
+      ).sort((a, b) => a.title.localeCompare(b.title))
+      .map((movies, index) => {
         return (
           <MovieCard movies={movies} index={index} key={index} />
         );
@@ -42,8 +43,7 @@ export default function Favoritlist({userId, user2Id}) {
             <h3>Favorittene deres!</h3>
             <p>Dere har {listCommonFavMovies.length} film(er) felles i favorittlisten deres</p>
             
-
-            {listCommonFavMovies}
+            {listCommonFavMovies.length > 0 ? listCommonFavMovies : <p>Ingen felles filmer i favorittlisten</p>}
 
     
     
