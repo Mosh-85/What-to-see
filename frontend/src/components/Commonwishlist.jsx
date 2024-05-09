@@ -45,7 +45,7 @@ export default function Commonwishlist({userId, user2Id}) {
         <h3>Deres ønskeliste!</h3>
         <p>Dere har {listCommonWishMovies.length} film(er) felles i ønskelisten deres</p>
         <ul>
-        {listCommonWishMovies}
+        {listCommonWishMovies.length > 0 ? listCommonWishMovies : <p>Ingen felles filmer i ønskelisten</p>}
 
         </ul>
         

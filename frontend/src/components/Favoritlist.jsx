@@ -43,8 +43,7 @@ export default function Favoritlist({userId, user2Id}) {
             <h3>Favorittene deres!</h3>
             <p>Dere har {listCommonFavMovies.length} film(er) felles i favorittlisten deres</p>
             
-
-            {listCommonFavMovies}
+            {listCommonFavMovies.length > 0 ? listCommonFavMovies : <p>Ingen felles filmer i favorittlisten</p>}
 
     
     
