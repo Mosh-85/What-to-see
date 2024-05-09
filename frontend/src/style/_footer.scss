@@ -1,10 +1,20 @@
+@import "variabler";
+
 .footer {
+    display: flex;
+    flex-direction: column;
+    background-color: $colorBlue;
+    padding: 1rem 1rem;
+    margin-bottom: 0;
+
     p {
-        background-color: #1976d2;
         text-align: center;
-        color: white;
-        padding: 1rem;
-        
-        
+        color: $colorWhite;
+        font-size: small;
+    }
+
+    a {
+        color: $colorWhite;
+        text-align: center;
     }
 }

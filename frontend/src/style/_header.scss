@@ -1,32 +1,68 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+@import "variabler";
 
 .header {
-    
+    background-color: $colorBlue;
+
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 1rem;
+
+        a {
+            text-decoration: none;
+
+            .MuiAvatar-root {
+                background-color: $colorWhite;
+                color: $colorBlue;
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 0.75rem;
+                text-align: center;
+                font-weight: bold;
+                margin: 0.5rem;
+                margin-top: 0;
+                border-radius: 0.5rem;
+            }
+        }
+    }   
 }
 
 .logo {
+    color: $colorWhite;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.5rem;
+    
+
+   
+  
+}
+
+.toosee {
+    display: flex;
+    align-items: center;
+    background-color: $colorWhite;
+    padding: 0.5rem;
+    color: $colorBlue;
+    border-radius: 0.5rem;
+  
 
 }
 
-
-.whattosee {
-
+.tv {
+    height: 1.85rem;
+    width: 1.75rem;
+    color: $colorBlue;
+    margin-right: 0.5rem;
+   
 }
-
 
 .genre {
-
-}
-
-
-
-.user {
-
-}
-
-
-
-.avatar {
+    color: $colorWhite;
+    margin-top: 1.5rem;
 
 }

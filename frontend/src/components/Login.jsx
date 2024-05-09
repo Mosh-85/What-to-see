@@ -6,7 +6,7 @@ export default function Login({ users, setLogedIn}) {
   return (
     <section className="login">
       <h3>Hvem skal se i dag?</h3>
-      <p>Velg bruker</p>
+      <p>Velg bruker:</p>
 
       <ul>
         {users.map((user, i) => (

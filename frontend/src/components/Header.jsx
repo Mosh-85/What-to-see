@@ -1,11 +1,9 @@
-import Button from "@mui/material/Button"
-import TvIcon from '@mui/icons-material/Tv'
+import React from "react"
+import { useNavigate } from "react-router-dom"
+import { CgScreen } from "react-icons/cg";
 import { Avatar } from "@mui/material"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
-import React from "react"
-import { useNavigate } from "react-router-dom"
-
 
 
 
@@ -36,27 +34,18 @@ export default function Header({ setLogedIn, userName }) {
   return (
     <header className="header">
       <nav>
-        <Button className="logo" href="/">What To See?</Button>
-        <Button className="whattosee" startIcon={<TvIcon/>} href="/" >Hva skal jeg se?</Button>
-        <Button className="genre" href="/genres">Bla gjennom sjangere</Button>
-        <Button className="user" 
-        aria-controls={open ? 'demo-positioned-menu' : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
-      >
+        <a href="/" className="logo">What To See?</a>
+        <a className="user" aria-controls={open ? 'demo-positioned-menu' : undefined} aria-haspopup="true"aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
+          <Avatar className="avatar" variant="square">{userName}</Avatar>
+          {/* KILDE: https://mui.com/material-ui/react-avatar/ */}
+        </a>
+        <Menu aria-labelledby="demo-positioned-button" anchorEl={anchorEl} open={open} onClose={handleClose}>
+          <MenuItem onClick={handleLogOut} >Logout</MenuItem>
+        </Menu> 
+        <a href="/" className="toosee"><CgScreen className="tv"/>  Hva skal jeg se?</a>
+        <a className="genre" href="/genres">Bla gjennom sjangere</a>
 
-       <Avatar className="avatar">{userName}</Avatar>
-      </Button>
-      <Menu 
-        aria-labelledby="demo-positioned-button"
-        anchorEl={anchorEl}
-        open={open}
-        onClose={handleClose}
-      >
-        <MenuItem onClick={handleLogOut} >Logout</MenuItem>
-      </Menu> 
       </nav>
     </header>
   )
-}
+} 
