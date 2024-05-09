@@ -39,7 +39,7 @@ export default function Favoritlist({userId, user2Id}) {
             {listCommonFavMovies && (
         <>
           
-            <h3>Go Safe!</h3>
+            <h3>Favorittene deres!</h3>
             <p>Dere har {listCommonFavMovies.length} film(er) felles i favorittlisten deres</p>
             
 
