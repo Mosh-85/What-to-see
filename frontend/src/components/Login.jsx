@@ -1,5 +1,3 @@
-import Button from "@mui/material/Button";
-
 export default function Login({ users, setLogedIn}) {
   
 
@@ -11,7 +9,7 @@ export default function Login({ users, setLogedIn}) {
       <ul>
         {users.map((user, i) => (
           <li key={i}>
-            <Button
+            <button
               variant="contained"
               onClick={() => {
                 localStorage.setItem("loggedInUser", user._id);
@@ -20,7 +18,7 @@ export default function Login({ users, setLogedIn}) {
               }}
             >
               {user.name}
-            </Button>
+            </button>
           </li>
         ))}
       </ul>
