@@ -12,6 +12,8 @@ $header-text-color: $witecolor;
     margin-right: auto; /* Plasserer "What To See" -knappen helt til venstre */
     color: $header-text-color; /* Bruk teksten fra variabelen */
     background-color: transparent; /* Gjør bakgrunnsfargen gjennomsiktig */
+    font-weight: bolder;
+    font-size: xx-large;
   }
 
   nav {
@@ -27,6 +29,6 @@ $header-text-color: $witecolor;
     color: $header-text-color; /* Bruk teksten fra variabelen */
     background-color: transparent; /* Gjør bakgrunnsfargen gjennomsiktig */
     border: none; /* Fjern grensen */
-    font-weight: bolder;
+    font-size: large;
   }
 }
