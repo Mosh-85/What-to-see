@@ -64,8 +64,6 @@ export default function Genres({ userId }) {
                   onChange={(e) => handleCheckboxChange(e, genre._id)}
                 />
             </label>
-              
-            
           </li>
         ))}
       </ul>
