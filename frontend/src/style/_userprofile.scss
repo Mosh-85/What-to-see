@@ -1,26 +1,26 @@
 section {
     display: flex;
     justify-content: space-between; /* Plasserer artiklene med like mellomrom mellom dem */
-    flex-wrap: wrap-reverse;
-    margin: 0 30px; /* Legg til litt mellomrom på sidene */
-
     
     article {
       flex-basis: calc(33.33% - 20px); /* Bredden på hver artikkel, med en margin på 20px mellom dem */
       margin-right: 20px; /* Legg til litt mellomrom mellom artiklene */
-
       
       &:last-child {
         margin-right: 0; /* Fjern margen til høyre for siste artikkel */
-        
-        h1{
-            display: flex;
-            margin-bottom: 10%;
-            
-        }
+      }
+  
+      p {
+        margin: 0; /* Fjern standardmarginen for paragrafen */
+      }
+  
+      h3, h4 {
+        margin-top: 0; /* Fjern standardmarginen for overskriftene */
+      }
+  
+      button {
+        margin-top: 10px; /* Legg til litt mellomrom over knappen */
       }
     }
   }
-  
-
   

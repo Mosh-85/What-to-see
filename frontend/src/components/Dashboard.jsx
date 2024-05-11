@@ -8,17 +8,20 @@ export default function Dashboard({userName, user2Name, userId, user2Id}) {
     <>
         <h1>Forslag for {userName} og {user2Name} </h1>
 
-        <section className="catch">
+        <section>
+
+        <article className="catch">
             <Commonwishlist userId={userId} user2Id={user2Id} />
-        </section>
+        </article>
 
-      <section className="gosafe">
+      <sarticle className="gosafe">
             <Favoritlist userId={userId} user2Id={user2Id} />
-        </section> 
+        </sarticle> 
 
-       <section className="utforsk">
+       <article className="utforsk">
             <Utforsk userId={userId} user2Id={user2Id}/>
-        </section> 
+        </article>
+        </section>
     </>
     )
 }

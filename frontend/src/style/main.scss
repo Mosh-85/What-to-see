@@ -3,8 +3,43 @@
 @import "moviecard";
 @import "login";
 @import "dashboard";
+@import 'variables';
+@import 'userprofile';
 
 
 body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     margin: 0;
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    #root {
+        padding: 0;
+        margin: 0;
+        max-width: 100%;
+        text-align: left;
+
+        main {
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 5rem;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-bottom: 10rem;
+
+            ul {
+
+                li {
+                    padding: 0.5rem;
+                }
+            }
 }
+    }}
