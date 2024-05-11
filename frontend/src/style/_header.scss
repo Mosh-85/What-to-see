@@ -1,32 +1,32 @@
+$header-background-color: $Hovedcolor;
+$header-text-color: $witecolor;
 
 .header {
-    
-}
+  background-color: $header-background-color; /* Bruk bakgrunnsfargen fra variabelen */
+  color: $header-text-color; /* Bruk teksten fra variabelen */
+  display: flex;
+  justify-content: space-between; /* Plasserer elementene med like mellomrom mellom dem */
+  align-items: center; /* Sentrerer vertikalt */
 
-.logo {
-    
+  .logo {
+    margin-right: auto; /* Plasserer "What To See" -knappen helt til venstre */
+    color: $header-text-color; /* Bruk teksten fra variabelen */
+    background-color: transparent; /* Gjør bakgrunnsfargen gjennomsiktig */
+  }
 
-}
+  nav {
+    display: flex;
+    align-items: center; /* Sentrerer vertikalt */
+  }
 
+  .avatar {
+    margin-left: auto; /* Plasserer avatar helt til høyre */
+  }
 
-.whattosee {
-    
-
-}
-
-
-.genre {
-
-}
-
-
-
-.user {
-
-}
-
-
-
-.avatar {
-
+  .whattosee, .genre, .user {
+    color: $header-text-color; /* Bruk teksten fra variabelen */
+    background-color: transparent; /* Gjør bakgrunnsfargen gjennomsiktig */
+    border: none; /* Fjern grensen */
+    font-weight: bolder;
+  }
 }

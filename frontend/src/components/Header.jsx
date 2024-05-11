@@ -35,8 +35,9 @@ export default function Header({ setLogedIn, userName }) {
 
   return (
     <header className="header">
+      <Button className="logo" href="/">What To See?</Button>
       <nav>
-        <Button className="logo" href="/">What To See?</Button>
+        
         <Button className="whattosee" startIcon={<TvIcon/>} href="/" >Hva skal jeg se?</Button>
         <Button className="genre" href="/genres">Bla gjennom sjangere</Button>
         <Button className="user" 

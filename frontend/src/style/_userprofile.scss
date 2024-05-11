@@ -1,11 +1,12 @@
 section {
     display: flex;
     justify-content: space-between; /* Plasserer artiklene med like mellomrom mellom dem */
-    
+    align-items: flex-start; /* Justerer vertikal plassering til toppen */
+  
     article {
       flex-basis: calc(33.33% - 20px); /* Bredden på hver artikkel, med en margin på 20px mellom dem */
       margin-right: 20px; /* Legg til litt mellomrom mellom artiklene */
-      
+  
       &:last-child {
         margin-right: 0; /* Fjern margen til høyre for siste artikkel */
       }

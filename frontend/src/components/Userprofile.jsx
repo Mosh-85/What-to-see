@@ -6,11 +6,14 @@ import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
     return (
     <>
-        <h3>Velkommen: {userName}</h3>
+    <section>
+        <h1>Velkommen: {userName}</h1>
         <article>
+            <ul>
             <p> <AutoAwesomeIcon />Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
             <Wishlist userId={userId}/>
+            </ul>
         </article>
         <article>
             {user2Name = localStorage.getItem("loggedInUser2") ? (
@@ -29,7 +32,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
                     <Loginfriend users={users} setLogedIn={setLogedIn}/>
             )}
         </article>
-
+        </section>
 
 
         
