@@ -53,8 +53,12 @@ export default function Genres({ userId }) {
 
   return (
     <section>
+      <article>
       <h1>Genres</h1>
       <p>{formMessage}</p>
+      </article>
+  
+      <article>
       <ul>
         {genres.map((genre) => (
           <li key={genre.genreslug}>
@@ -71,6 +75,7 @@ export default function Genres({ userId }) {
           </li>
         ))}
       </ul>
+      </article>
     </section>
   );
 }

@@ -42,10 +42,13 @@ export default function MovieCard({ movies, index }) {
 
   return (
     <>
-        <p key={index}>
+    <section>
+        <article>
+        <p key={index}> </p>
         <p><img src={api?.image} alt={api?.title + " " + "bilde"} width="150" height="210"></img></p>
         <p><a href={`https://www.imdb.com/title/${movies?.imdbid}`} target= "_blank"> {api?.title} ({api?.release})</a> </p>
-        </p>
+        </article>
+    </section>
     </>
   )
 }

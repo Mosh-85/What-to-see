@@ -27,6 +27,7 @@ export default function GenresPage() {
 
     return (
       <section>
+        <article>
         {listMoviesByGenre && (
           <>
             <h3>Sjanger: {upperslug} ({listMoviesByGenre.length} filmer) </h3>
@@ -34,6 +35,7 @@ export default function GenresPage() {
             
           </>
         )}
+        </article>
       </section>
     );
 }
