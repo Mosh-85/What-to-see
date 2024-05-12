@@ -53,15 +53,13 @@ export default function Genres({ userId }) {
 
   return (
     <section>
+      
       <article>
-      <h1>Genres</h1>
+      <h3>Genres</h3>
       <p>{formMessage}</p>
-      </article>
-  
-      <article>
       <ul>
         {genres.map((genre) => (
-          <li key={genre.genreslug}>
+          <line key={genre.genreslug}>
             <Link to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>
@@ -72,7 +70,7 @@ export default function Genres({ userId }) {
               checked={favGenres.includes(genre._id)}
               onChange={(e) => handleCheckboxChange(e, genre._id)}
             />
-          </li>
+          </line>
         ))}
       </ul>
       </article>

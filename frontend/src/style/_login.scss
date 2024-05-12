@@ -1,34 +1,30 @@
+@import "footer";
 .login {
     display: flex;
     flex-direction: column;
     justify-content: top;
     align-items: center;
-    height: 70vh;
+    height: 10vh;
 
     h3 {
         margin-bottom: 1rem;
-        font-size: 30px;
+        font-size: 40px;
     }
 
     ul {
         display: flex;
-        flex-direction: column;
+        flex-direction: row; /* Endret til row */
         justify-content: center;
         align-items: center;
         padding: 0;
         margin: 0;
-        gap: .5rem;
+        gap: 0.1rem;
     }
 
     li {
-
         list-style-type: none;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
-
-
-
-
 }

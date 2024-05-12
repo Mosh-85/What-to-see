@@ -1,13 +1,11 @@
 @import 'variables';
 
 .footer {
-    background-color: $Hovedcolor; /* Bakgrunnsfarge for footer */
-    color: $witecolor; /* Tekstfarge for footer */
-    text-align: center;
-    padding: 1rem; /* Padding rundt innholdet i footer */
-    
-    p {
-      margin: 0; /* Fjern standardmarginen for paragrafen */
-    }
-  }
-  
+  position: fixed; /* Posisjonerer fotteren uavhengig av rulleposisjonen */
+  bottom: 0; /* Plasserer fotteren i bunnen av visningen */
+  left: 0; /* Justerer fotteren til venstre kant av visningen */
+  width: 100%; /* Gjør fotteren 100% av bredden på visningen */
+  background-color:#1976d2; /* Endre fargen etter behov */
+  padding: 20px; /* Legg til padding for å skille innholdet fra kantene */
+  text-align: center; /* Sentrer innholdet horisontalt */
+}
