@@ -44,7 +44,7 @@ export default function Commonwishlist({userId, user2Id}) {
       
         <h3>Deres ønskeliste!</h3>
         <p>Dere har {listCommonWishMovies.length} film(er) felles i ønskelisten deres</p>
-        <ul>
+        <ul  className="catch">
         {listCommonWishMovies}
 
         </ul>

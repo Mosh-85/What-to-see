@@ -55,7 +55,7 @@ export default function Utforsk({userId, user2Id}) {
       <>
         <h3>FelleGenres!</h3>
         <p>Dere har {listCommonFavGenres.length} genres felles i ønskelisten deres</p>
-        <ul>
+        <ul className="utforsk">
           {listCommonFavGenres.length > 0 ? listCommonFavGenres : <p>Ingen felles genres</p>}
         </ul>
 
