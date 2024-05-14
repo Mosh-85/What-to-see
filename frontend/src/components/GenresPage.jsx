@@ -30,10 +30,12 @@ export default function GenresPage() {
         <article>
         {listMoviesByGenre && (
           <>
-            
+            <div>
+              <ul>
             <h3>Sjanger: {upperslug} ({listMoviesByGenre.length} filmer) </h3>
-            <div  className="movie" > {listMoviesByGenre} </div>
-            
+            <p  className="movie" > {listMoviesByGenre} </p>
+            </ul>
+            </div>
           </>
         )}
         </article>
