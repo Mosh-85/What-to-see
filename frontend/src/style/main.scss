@@ -5,9 +5,9 @@
 @import "dashboard";
 @import 'variables';
 @import 'userprofile';
-@import '_frontpage.scss';
-@import'_genres.scss';
-
+@import '_frontpage';
+@import'_genres';
+@import '_genrespage';
 
 body {
     display: flex;
@@ -27,7 +27,7 @@ body {
         padding: 0;
         margin: 0;
         max-width: 100%;
-        text-align: left;
+        text-align: center;
 
         main {
             flex-direction: column;

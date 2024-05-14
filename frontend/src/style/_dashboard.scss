@@ -10,13 +10,11 @@ section {
     flex-direction: column; /* Setter retningen til kolonne for innholdet */
     align-items: center; /* Justerer elementene til midten av aksen */
     
-    &:last-child {
-      margin-right: 0; /* Fjern margen til høyre for siste artikkel */
-    }
+    
 
     h1 {
-      margin-bottom: 60%; /* Legg til litt mellomrom under overskriften */
-      justify-content: center;
+
+
     }
   }
 }

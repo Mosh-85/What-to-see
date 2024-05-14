@@ -56,7 +56,7 @@ export default function Genres({ userId }) {
       
       <article>
       <h3>Genres</h3>
-      <p>{formMessage}</p>
+      <h2>{formMessage}</h2>
       <ul>
         {genres.map((genre) => (
           <line key={genre.genreslug}>
