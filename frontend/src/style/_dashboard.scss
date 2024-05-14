@@ -1,11 +1,9 @@
 section {
   display: flex;
   justify-content: space-between; /* Plasserer artiklene med like mellomrom mellom dem */
-  margin: 0 60px; /* Legg til litt mellomrom på sidene */
+  margin: 0px; /* Legg til litt mellomrom på sidene */
 
   article {
-    flex-basis: calc(33.33% - 20px); /* Bredden på hver artikkel, med en margin på 20px mellom dem */
-    margin-right: 20px; /* Legg til litt mellomrom mellom artiklene */
     display: flex; /* Plasserer elementene i samme rad */
     flex-direction: column; /* Setter retningen til kolonne for innholdet */
     align-items: center; /* Justerer elementene til midten av aksen */
