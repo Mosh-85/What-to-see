@@ -1,16 +1,17 @@
 // Container for the entire section
 .movie {
     display:flex;
-    align-items: center;
+    flex-direction:row;
+    flex-direction:row;
+    column-gap:2rem;
     justify-content: center;
-    width: 150px;
-    padding: 0px;
+    gap:2rem;
 
     
     img {
         display: flexbox;
-        width: 150px;
-        
+        width: 450px;
+        gap: 2rem;
         height: auto;
   
 
