@@ -65,23 +65,12 @@ export default function Mixmatch({userId, user2Id, userName, user2Name}) {
         );
       });
    
-
-
-
-
     return (
     <>
         <h3> {user2Name} favoritt og {userName} ønsker er: </h3>
-        <ul className="mixmatch">{listMixMatch }</ul>
+        <ul className="article-card">{listMixMatch }</ul>
         <h3>{userName} favoritt og {user2Name} ønsker er:  </h3>
-        <ul className="mixmatch">{listMixMatchrev }</ul>   
+        <ul className="article-card">{listMixMatchrev }</ul>   
     </>
     )
 }
-
-
-
-
-// User1        =>  User2
-// favorit      =>  ønskelista
-// ønskelista   =>  favoritlista
