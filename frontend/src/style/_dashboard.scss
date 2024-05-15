@@ -1,11 +1,122 @@
+.dash {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem;
+        padding: 0;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+    }
+}
+
+
 .catch {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 1rem;
+
+
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        display: block;
+        margin: 0;
+        padding: .5rem 0 2rem 0;
+
+    }
+
+    img {
+        width: 20vh;
+        height: auto;
+        object-fit: cover;
+    }
 
 }
 
 .gosafe {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        display: block;
+        margin: 0;
+        padding: .5rem 0 2rem 0;
+
+    }
+
+    img {
+        width: 20vh;
+        height: auto;
+        object-fit: cover;
+    }
 
 }
 
 .utforsk {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+
+}
+
+.mixmatch {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        display: block;
+        margin: 0;
+        padding: .5rem 0 2rem 0;
+
+    }
+
+    img {
+        width: 20vh;
+        height: auto;
+        object-fit: cover;
+    }
 
 }

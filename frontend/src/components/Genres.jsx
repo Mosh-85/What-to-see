@@ -1,7 +1,4 @@
 import { useEffect, useState } from "react";
-import Checkbox from "@mui/material/Checkbox";
-import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import Favorite from "@mui/icons-material/Favorite";
 import { fetchAllGenres } from "../../sanity/services.js/genreServices";
 import { addFavGenre, fetchFavGenres, removeFavGenre } from "../../sanity/services.js/userServices";
 import { Link } from "react-router-dom";
@@ -10,7 +7,6 @@ export default function Genres({ userId }) {
   const [genres, setGenres] = useState([]);
   const [favGenres, setFavGenres] = useState([]);
   const [formMessage, setFormMessage] = useState("");
-  const label = { inputProps: { "aria-label": "Fav-Toggle" } };
 
 
   useEffect(() => {
@@ -49,10 +45,8 @@ export default function Genres({ userId }) {
 
 
 
-
-
   return (
-    <section>
+    <section className="genres">
       <h1>Genres</h1>
       <p>{formMessage}</p>
       <ul>
@@ -61,13 +55,13 @@ export default function Genres({ userId }) {
             <Link to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>
-            <Checkbox
-              {...label}
-              icon={<FavoriteBorder />}
-              checkedIcon={<Favorite />}
-              checked={favGenres.includes(genre._id)}
-              onChange={(e) => handleCheckboxChange(e, genre._id)}
-            />
+            <label>
+              <input
+                  type="checkbox"
+                  checked={favGenres.includes(genre._id)}
+                  onChange={(e) => handleCheckboxChange(e, genre._id)}
+                />
+            </label>
           </li>
         ))}
       </ul>
