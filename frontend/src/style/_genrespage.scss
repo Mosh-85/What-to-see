@@ -1,0 +1,38 @@
+// Container for the entire section
+.movie {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction:row;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    justify-content: center;
+    gap:2rem;
+
+    
+    img {
+        display:flex;
+        flex-direction:wrap;
+        flex: 0 1 32%;
+        flex-grow: 0;
+        flex-shrink: 1;
+        flex-basis: 32%;
+        width: 300px;
+        gap: 1rem;
+        height: auto;
+        padding-left: 0%;
+        padding-right: 12%;
+        
+  
+
+        
+    }
+
+    
+      
+
+}
+
+@media only screen and (min-width: 800px) {
+
+}

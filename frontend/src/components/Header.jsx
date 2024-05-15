@@ -1,6 +1,7 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { CgScreen } from "react-icons/cg";
+import { MdOutlinePlaylistAddCheck } from "react-icons/md"
 import { Avatar } from "@mui/material"
 import Menu from "@mui/material/Menu"
 import MenuItem from "@mui/material/MenuItem"
@@ -31,22 +32,26 @@ export default function Header({ setLogedIn, userName }) {
     //KILDE: https://www.geeksforgeeks.org/reactjs-usenavigate-hook/?ref=ml_lbp
   }
 
+
+
+
   return (
     <header className="header">
-      <nav>
+      <h1>
         <a href="/" className="logo">What To See?</a>
-
-        <Menu aria-labelledby="demo-positioned-button" anchorEl={anchorEl} open={open} onClose={handleClose}>
-          <MenuItem onClick={handleLogOut} >Logout</MenuItem>
-        </Menu> 
-        <a href="/" className="toosee"><CgScreen className="tv"/>  Hva skal jeg se?</a>
-        <a className="genre" href="/genres">Bla gjennom sjangere</a>
+      </h1>
+      <nav className="myNav">
         <a className="user" aria-controls={open ? 'demo-positioned-menu' : undefined} aria-haspopup="true"aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
           <Avatar className="avatar" variant="square">{userName}</Avatar>
           {/* KILDE: https://mui.com/material-ui/react-avatar/ */}
         </a>
-
+        <Menu aria-labelledby="demo-positioned-button" anchorEl={anchorEl} open={open} onClose={handleClose}>
+          <MenuItem onClick={handleLogOut} >Logout</MenuItem>
+        </Menu> 
+        <NavLink to="/" className="nav-button"><CgScreen/>  Hva skal jeg se?</NavLink>
+        <NavLink to="/genres" className="nav-button"><MdOutlinePlaylistAddCheck/> Bla gjennom sjangere</NavLink>
+        {/* KILDE: https://reactrouter.com/en/main/components/nav-link */}
       </nav>
     </header>
   )
-} 
+}

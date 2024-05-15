@@ -27,13 +27,18 @@ export default function GenresPage() {
 
     return (
       <section>
+        <article>
         {listMoviesByGenre && (
           <>
+            <div>
+              <ul>
             <h3>Sjanger: {upperslug} ({listMoviesByGenre.length} filmer) </h3>
-            <ul> {listMoviesByGenre} </ul>
-            
+            <p  className="movie" > {listMoviesByGenre} </p>
+            </ul>
+            </div>
           </>
         )}
+        </article>
       </section>
     );
 }
