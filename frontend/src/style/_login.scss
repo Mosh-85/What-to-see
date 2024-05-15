@@ -7,6 +7,8 @@
     align-items: center;
     height: 70vh;
 
+    
+
     h2 {
         margin-bottom: 1rem;
         margin-top: 3.5rem;
@@ -22,16 +24,7 @@
         margin-top: 0.5rem;
         gap: 1rem;
 
-        button {
-            background-color: $colorBlue;
-            color: $colorWhite;
-            font-weight: bold;
-            text-transform: uppercase;
-            border-radius: 0.5rem;
-            border-style: none;
-            width: 7.5rem;
-            height: 3.5rem;
-        }
+
     }
 
     li {
@@ -41,3 +34,4 @@
         justify-content: center;
     }
 }
+
