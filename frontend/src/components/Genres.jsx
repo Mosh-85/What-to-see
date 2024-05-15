@@ -47,7 +47,7 @@ export default function Genres({ userId }) {
 
   return (
     <main className="genres">
-      <h1>Genres</h1>
+      <h1>Alle sjangere</h1>
       <p>{formMessage}</p>
       <ul>
         {genres.map((genre) => (
