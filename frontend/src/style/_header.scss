@@ -92,6 +92,7 @@
 @media only screen and (min-width: 670px) {
     .header {
         grid-template-columns: auto 1fr auto;
+        grid-template-rows: 1fr;
 
         h1 {
             grid-area: 1/1/2/2;
