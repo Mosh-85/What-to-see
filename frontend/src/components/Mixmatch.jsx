@@ -66,11 +66,15 @@ export default function Mixmatch({userId, user2Id, userName, user2Name}) {
       });
    
     return (
-    <>
+    <div>
+      <article>
         <h3> {user2Name} favoritt og {userName} ønsker er: </h3>
         <ul className="article-card">{listMixMatch }</ul>
+      </article>
+      <article>
         <h3>{userName} favoritt og {user2Name} ønsker er:  </h3>
-        <ul className="article-card">{listMixMatchrev }</ul>   
-    </>
+        <ul className="article-card">{listMixMatchrev }</ul> 
+      </article>  
+    </div>
     )
 }
