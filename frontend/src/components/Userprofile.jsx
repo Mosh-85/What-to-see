@@ -1,14 +1,15 @@
 import Loginfriend from "./Loginfriend"
 import { Button } from "@mui/material"
 import Wishlist from "./Wishlist"
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
+import { BsStars } from "react-icons/bs"
 
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
     return (
     <>
         <h3>Velkommen: {userName}</h3>
         <article>
-            <p> <AutoAwesomeIcon />Filmer jeg skal se!</p>
+            
+            <p> <BsStars /> Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
             <Wishlist userId={userId}/>
         </article>
