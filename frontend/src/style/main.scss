@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&family=Roboto:wght@400;500;700;900&display=swap');
+
+@import "variabler";
 @import "footer";
 @import "header";
 @import "moviecard";
@@ -5,7 +8,11 @@
 @import "dashboard";
 @import "genres";
 
+*{
+    box-sizing: border-box;
+}
 
 body {
     margin: 0;
+    font-family: "Roboto", "Noto", sans-serif;
 }

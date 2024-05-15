@@ -1,35 +1,59 @@
-$header-background-color: $Hovedcolor;
-$header-text-color: $witecolor;
+@import "variabler";
 
 .header {
-  background-color: $header-background-color; /* Bruk bakgrunnsfargen fra variabelen */
-  color: $header-text-color; /* Bruk teksten fra variabelen */
-  display: flex;
-  justify-content: space-between; /* Plasserer elementene med like mellomrom mellom dem */
-  align-items: center; /* Sentrerer vertikalt */
+    background-color: $colorBlue;
 
-  .logo {
-    margin-right: auto; /* Plasserer "What To See" -knappen helt til venstre */
-    color: $header-text-color; /* Bruk teksten fra variabelen */
-    background-color: transparent; /* Gjør bakgrunnsfargen gjennomsiktig */
-    font-weight: bolder;
-    font-size: xx-large;
-  }
+    nav {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 1rem;
 
-  nav {
-    display: flex;
-    align-items: center; /* Sentrerer vertikalt */
-  }
+        a {
+            text-decoration: none;
 
-  .avatar {
-    margin-left: auto; /* Plasserer avatar helt til høyre */
-  }
-
-  .whattosee, .genre, .user {
-    color: $header-text-color; /* Bruk teksten fra variabelen */
-    background-color: transparent; /* Gjør bakgrunnsfargen gjennomsiktig */
-    border: none; /* Fjern grensen */
-    font-size: large;
-  }
+            .MuiAvatar-root {
+                background-color: $colorWhite;
+                color: $colorBlue;
+                width: 3.5rem;
+                height: 3.5rem;
+                font-size: 0.75rem;
+                text-align: center;
+                font-weight: bold;
+                margin: 0.5rem;
+                margin-top: 0;
+                border-radius: 0.5rem;
+            }
+        }
+    }   
 }
 
+.logo {
+    color: $colorWhite;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0.5rem;
+}
+
+.toosee {
+    display: flex;
+    align-items: center;
+    background-color: $colorWhite;
+    padding: 0.5rem;
+    color: $colorBlue;
+    border-radius: 0.5rem;
+}
+
+.tv {
+    height: 1.85rem;
+    width: 1.75rem;
+    color: $colorBlue;
+    margin-right: 0.5rem; 
+}
+
+.genre {
+    color: $colorWhite;
+    margin-top: 0.85rem;
+}

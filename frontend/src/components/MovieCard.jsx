@@ -33,9 +33,9 @@ export default function MovieCard({ movies, index }) {
 
     }
 
-    useEffect(() => {
-        fetchApiSearch(movies.imdbId);
-    }, [movies.imdbId])
+        useEffect(() => {
+            fetchApiSearch(movies.imdbId);
+        }, [movies.imdbId])
 
 
 
