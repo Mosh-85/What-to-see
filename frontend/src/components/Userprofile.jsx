@@ -10,7 +10,10 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
         <article>
             <p> <AutoAwesomeIcon />Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
+            <ul>
             <Wishlist userId={userId}/>
+            </ul>
+            
         </article>
         <article>
             {user2Name = localStorage.getItem("loggedInUser2") ? (

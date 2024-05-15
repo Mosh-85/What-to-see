@@ -46,7 +46,7 @@ export default function Genres({ userId }) {
 
 
   return (
-    <section className="genres">
+    <main className="genres">
       <h1>Genres</h1>
       <p>{formMessage}</p>
       <ul>
@@ -65,6 +65,6 @@ export default function Genres({ userId }) {
           </li>
         ))}
       </ul>
-    </section>
+    </main>
   );
 }
