@@ -1,23 +1,122 @@
-section {
-  display: flex;
-  justify-content: space-between; /* Plasserer artiklene med like mellomrom mellom dem */
-  margin: 0px; /* Legg til litt mellomrom på sidene */
-
-  article {
-    display: flex; /* Plasserer elementene i samme rad */
-    flex-direction: column; /* Setter retningen til kolonne for innholdet */
-    align-items: center; /* Justerer elementene til midten av aksen */
-    
-    
+.dash {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
 
     h1 {
-
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        padding: 0;
 
     }
-  }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 2rem;
+        padding: 0;
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 0;
+        gap: 1rem;
+    }
 }
 
-/*Pc og tablet specific css*/
-@media only screen and (min-width: 800px) {}
 
- 
+.catch {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    gap: 1rem;
+
+
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        display: block;
+        margin: 0;
+        padding: .5rem 0 2rem 0;
+
+    }
+
+    img {
+        width: 20vh;
+        height: auto;
+        object-fit: cover;
+    }
+
+}
+
+.gosafe {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        display: block;
+        margin: 0;
+        padding: .5rem 0 2rem 0;
+
+    }
+
+    img {
+        width: 20vh;
+        height: auto;
+        object-fit: cover;
+    }
+
+}
+
+.utforsk {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+
+}
+
+.mixmatch {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    gap: 1rem;
+
+    li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    li a {
+        display: block;
+        margin: 0;
+        padding: .5rem 0 2rem 0;
+
+    }
+
+    img {
+        width: 20vh;
+        height: auto;
+        object-fit: cover;
+    }
+
+}
