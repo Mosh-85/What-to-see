@@ -9,7 +9,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
         <article>
             <p> <BsStars /> Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
-            <ul>
+            <ul className="article-card">
             <Wishlist userId={userId}/>
             </ul>
             
