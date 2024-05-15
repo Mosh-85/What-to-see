@@ -1,38 +1,9 @@
-// Container for the entire section
-.movie {
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction:row;
-    padding-left: 2px;
-    padding-right: 2px;
 
-    justify-content: center;
-    gap:2rem;
-
+.genres-one {
     
-    img {
-        display:flex;
-        flex-direction:wrap;
-        flex: 0 1 32%;
-        flex-grow: 0;
-        flex-shrink: 1;
-        flex-basis: 32%;
-        width: 300px;
-        gap: 1rem;
-        height: auto;
-        padding-left: 0%;
-        padding-right: 12%;
-        
-  
-
-        
+    h2 {
+        font-size: 1.5rem;
+        margin: 0 0 1.5rem 0.5rem;
+        padding-top: 2rem;
     }
-
-    
-      
-
-}
-
-@media only screen and (min-width: 800px) {
-
 }
