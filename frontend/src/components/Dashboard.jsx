@@ -21,7 +21,7 @@ export default function Dashboard({userName, user2Name, userId, user2Id}) {
             <Utforsk userId={userId} user2Id={user2Id}/>
         </section>   
 
-        <section>
+        <section className="mixmatch">
             <Mixmatch userId={userId} user2Id={user2Id} userName={userName} user2Name={user2Name}/>
         </section>
     </main>
