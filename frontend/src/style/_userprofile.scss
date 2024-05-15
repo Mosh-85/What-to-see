@@ -1,26 +1,26 @@
 section {
     display: flex;
-    justify-content: space-between; /* Plasserer artiklene med like mellomrom mellom dem */
-    align-items: flex-start; /* Justerer vertikal plassering til toppen */
+    justify-content: space-between;
+    align-items: flex-start; 
   
     article {
-      flex-basis: calc(33.33% - 20px); /* Bredden på hver artikkel, med en margin på 20px mellom dem */
-      margin-right: 20px; /* Legg til litt mellomrom mellom artiklene */
+      flex-basis: calc(33.33% - 20px); 
+      margin-right: 20px;
   
       &:last-child {
-        margin-right: 0; /* Fjern margen til høyre for siste artikkel */
+        margin-right: 0; 
       }
   
       p {
-        margin: 0; /* Fjern standardmarginen for paragrafen */
+        margin: 0;
       }
   
-      h3, h4 {
-        margin-top: 0; /* Fjern standardmarginen for overskriftene */
+      h2, h4 {
+        margin-top: 0;
       }
   
       button {
-        margin-top: 10px; /* Legg til litt mellomrom over knappen */
+        margin-top: 10px;
       }
     }
   }

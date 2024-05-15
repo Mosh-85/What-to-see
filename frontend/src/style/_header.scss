@@ -2,6 +2,18 @@
 
 .header {
     background-color: $colorBlue;
+  
+    h1 {
+        
+        a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 0.5rem;
+            color: $colorWhite;
+        }
+    }
 
     nav {
         display: flex;
@@ -29,31 +41,41 @@
     }   
 }
 
-.logo {
-    color: $colorWhite;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin: 0.5rem;
-}
 
-.toosee {
+
+.nav-button {
     display: flex;
     align-items: center;
-    background-color: $colorWhite;
     padding: 0.5rem;
-    color: $colorBlue;
-    border-radius: 0.5rem;
-}
-
-.tv {
-    height: 1.85rem;
-    width: 1.75rem;
-    color: $colorBlue;
-    margin-right: 0.5rem; 
-}
-
-.genre {
     color: $colorWhite;
-    margin-top: 0.85rem;
+    border-radius: 0.5rem;
+    border: 1px solid $colorWhite;
+
+    &:hover {
+        background-color: $colorWhite;
+        color: $colorBlue;
+    }
+
+    svg {
+        height: 1.85rem;
+        width: 1.75rem;
+        color: $colorWhite;
+        margin-right: 0.5rem; 
+    }
+
+
 }
+
+.active {
+    background-color: $colorWhite;
+    color: $colorBlue;
+
+    svg {
+        color: $colorBlue;
+    }
+}
+
+
+
+
+

@@ -5,9 +5,8 @@ import { BsStars } from "react-icons/bs"
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
     return (
     <>
-        <h3>Velkommen: {userName}</h3>
+        <h2>Velkommen: {userName}</h2>
         <article>
-            
             <p> <BsStars /> Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
             <ul>

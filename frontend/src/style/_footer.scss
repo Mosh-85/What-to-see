@@ -7,14 +7,15 @@
     padding: 1rem 1rem;
     margin-bottom: 0;
 
+    h5 {
+        color: $colorWhite;
+        text-align: center;
+    }
+
     p {
         text-align: center;
         color: $colorWhite;
         font-size: small;
     }
-
-    a {
-        color: $colorWhite;
-        text-align: center;
-    }
 }
+   
