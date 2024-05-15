@@ -1,5 +1,6 @@
 /* src/MovieCard.css */
 .movie-card {
+  grid-template-columns: repeat(4, 1fr);
   width: 200px;
   border: 1px solid #ddd;
   border-radius: 8px;
