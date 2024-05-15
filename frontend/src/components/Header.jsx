@@ -35,15 +35,16 @@ export default function Header({ setLogedIn, userName }) {
     <header className="header">
       <nav>
         <a href="/" className="logo">What To See?</a>
-        <a className="user" aria-controls={open ? 'demo-positioned-menu' : undefined} aria-haspopup="true"aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
-          <Avatar className="avatar" variant="square">{userName}</Avatar>
-          {/* KILDE: https://mui.com/material-ui/react-avatar/ */}
-        </a>
+
         <Menu aria-labelledby="demo-positioned-button" anchorEl={anchorEl} open={open} onClose={handleClose}>
           <MenuItem onClick={handleLogOut} >Logout</MenuItem>
         </Menu> 
         <a href="/" className="toosee"><CgScreen className="tv"/>  Hva skal jeg se?</a>
         <a className="genre" href="/genres">Bla gjennom sjangere</a>
+        <a className="user" aria-controls={open ? 'demo-positioned-menu' : undefined} aria-haspopup="true"aria-expanded={open ? 'true' : undefined} onClick={handleClick}>
+          <Avatar className="avatar" variant="square">{userName}</Avatar>
+          {/* KILDE: https://mui.com/material-ui/react-avatar/ */}
+        </a>
 
       </nav>
     </header>
