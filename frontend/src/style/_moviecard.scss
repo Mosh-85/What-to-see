@@ -1,5 +1,45 @@
 @import "variabler";
 
-.movie-card {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+.article-card {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  gap: 1rem;
+  justify-content: center;
+  
+  li {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: $colorGray;
+    gap: 1rem;
+  }
+
+  img {
+    padding-top: .5rem;
+    width: 20vh;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  a {
+    text-decoration: none;
+    color: $colorBlue;
+    font-size: .85rem;
+    display: block;
+    margin: 0;
+    padding: .5rem 0 2rem 0;
+  }
+
 }
+
+
+
+
+
+
+

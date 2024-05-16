@@ -31,7 +31,7 @@ export default function GenresPage() {
         {listMoviesByGenre && (
           <>
             <h2>Sjanger: {upperslug} ({listMoviesByGenre.length} filmer)</h2>
-            <ul>
+            <ul className="article-card">
               {listMoviesByGenre}
             </ul>
           </>
