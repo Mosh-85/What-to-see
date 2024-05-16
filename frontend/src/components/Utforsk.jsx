@@ -50,7 +50,7 @@ export default function Utforsk({userId, user2Id}) {
 
 
    return (
-    <article className='utforsk'>
+    <article className='utforsk genres'>
         {listCommonFavGenres && (
       <>
         <h3>Felles Sjangere!</h3>
