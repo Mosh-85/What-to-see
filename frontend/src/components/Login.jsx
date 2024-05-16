@@ -7,15 +7,18 @@ export default function Login({ users, setLogedIn}) {
     <div className="login">
       <h2>Hvem skal se i dag?</h2>
       <p>Velg bruker:</p>
+      <ul>
         {users.map((user, i) => (
-            <Link className="button" key={i} variant="contained" onClick={() => {
-                localStorage.setItem("loggedInUser", user._id)
-                localStorage.setItem("loggedInUserName", user.name)
-                setLogedIn(user.name)
-              }}>
-              {user.name}
-            </Link>
-        ))}
+              <Link className="button" key={i} variant="contained" onClick={() => {
+                  localStorage.setItem("loggedInUser", user._id)
+                  localStorage.setItem("loggedInUserName", user.name)
+                  setLogedIn(user.name)
+                }}>
+                {user.name}
+              </Link>
+          ))}
+      </ul>
+        
       </div>
     
   )
