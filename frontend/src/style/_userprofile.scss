@@ -1,6 +1,6 @@
 .uProfile {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto;
   grid-template-rows: auto 1fr auto;
   margin: 1.5rem;
 
@@ -11,10 +11,27 @@
 
 }
 
+.userGrid {
+  grid-area: 3/1/4/2;
+}
+
+.userGrid1 {
+  grid-area: 2/1/3/2;
+}
+
 
 
 @media only screen and (min-width: 670px) {
   .uProfile {
+    grid-template-columns: auto auto;
     margin: 3rem;
+  }
+
+  .userGrid {
+    grid-area: 2/1/3/2;
+  }
+
+  .userGrid1 {
+    grid-area: 1/2/4/3;
   }
 }

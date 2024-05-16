@@ -7,7 +7,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
     return (
     <div className="uProfile">
         <h2>Velkommen: {userName}</h2>
-        <article>
+        <article className="userGrid">
             <p> <BsStars /> Filmer jeg skal se!</p>
             <p>Disse filmene ligger i ønskelisten din:</p>
             <ul className="article-card">
@@ -15,7 +15,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
             </ul>
             
         </article>
-        <article>
+        <article className="userGrid1">
             {user2Name = localStorage.getItem("loggedInUser2") ? (
                 <>
                     <h4>Du ser med: {user2Name}</h4>
