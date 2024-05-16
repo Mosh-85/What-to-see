@@ -13,14 +13,16 @@
     text-decoration: none;
     padding: .75rem;
     width: 155px;
-    
-            a {
-                text-align: center;
-            
-            }
 
-    :hover {
-    background-color: $colorBlue;
-    color: $colorWhite;
+    a {
+        text-align: center;
+        text-decoration: none;
+        color: $colorBlue;
+    }
+
+    &:hover,
+    &:hover a {
+        background-color: $colorBlue;
+        color: $colorWhite;
     }
 }
