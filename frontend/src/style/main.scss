@@ -15,17 +15,15 @@
 }
 
 .user-list{
-    display: flex;
+    list-style-type: none;
+    padding: .75rem;  
+    border: 1px solid $colorBlue;
+    overflow: hidden;
+    box-shadow: 10 10px 10px rgba(0, 0, 0, 0.1);
     font-weight: bold;
-    text-transform: uppercase;
-    border-radius: 0.5em;
-    margin-bottom: 3cap;
-    margin: 0;
-    outline: none;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 14px;
+    margin: .6rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
 .movie-card {
