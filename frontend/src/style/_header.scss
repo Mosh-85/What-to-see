@@ -18,7 +18,7 @@
             text-transform: uppercase;
             font-weight: bold;
             margin: 0.5rem;
-            color: $colorWhite;
+            color: $colorGray;
         }
     }
 
@@ -29,7 +29,7 @@
     }
 
     .MuiAvatar-root {
-        background-color: $colorWhite;
+        background-color: $colorGray;
         color: $colorBlue;
         width: 3.5rem;
         height: 3.5rem;
@@ -55,7 +55,7 @@ nav {
     padding: 0.5rem;
     color: $colorWhite;
     border-radius: 0.5rem;
-    border: 1px solid $colorWhite;
+    border: 1px solid $colorGray;
     text-decoration: none;
 
     p {
@@ -64,7 +64,7 @@ nav {
     }
 
     &:hover {
-        background-color: $colorWhite;
+        background-color: $colorGray;
         color: $colorBlue;
 
         svg {
@@ -75,7 +75,7 @@ nav {
     svg {
         height: 2.3rem;
         width: 2.3rem;
-        color: $colorWhite;
+        color: $colorGray;
         margin-right: 0.5rem;
     }
 
@@ -83,7 +83,7 @@ nav {
 }
 
 .active {
-    background-color: $colorWhite;
+    background-color: $colorGray;
     color: $colorBlue;
 
     svg {
