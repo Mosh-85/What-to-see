@@ -4,7 +4,7 @@ import { BsStars } from "react-icons/bs"
 
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
     return (
-    <>
+    <div className="uProfile">
         <h2>Velkommen: {userName}</h2>
         <article>
             <p> <BsStars /> Filmer jeg skal se!</p>
@@ -31,12 +31,6 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
                     <Loginfriend users={users} setLogedIn={setLogedIn}/>
             )}
         </article>
-
-
-
-        
-
-
-    </>
+    </div>
     )
 }

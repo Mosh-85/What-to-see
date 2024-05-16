@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams} from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { fetchMoviesBySlug } from "../../sanity/services.js/genreServices";
 import MovieCard from "./MovieCard";
 
@@ -26,16 +26,14 @@ export default function GenresPage() {
       }) 
 
     return (
-      <section>
+      <section className="genres-one">
         <article>
         {listMoviesByGenre && (
           <>
-            <div>
-              <ul>
-            <h3>Sjanger: {upperslug} ({listMoviesByGenre.length} filmer) </h3>
-            <p  className="movie" > {listMoviesByGenre} </p>
+            <h2>Sjanger: {upperslug} ({listMoviesByGenre.length} filmer)</h2>
+            <ul>
+              <p className="movie"> {listMoviesByGenre} </p>
             </ul>
-            </div>
           </>
         )}
         </article>

@@ -8,10 +8,10 @@
 @import "dashboard";
 @import "genres";
 @import "genrespage";
+@import "userprofile";
 
-*{
+* {
     box-sizing: border-box;
-    
 }
 
 .user-list{
@@ -19,30 +19,14 @@
     font-weight: bold;
     text-transform: uppercase;
     border-radius: 0.5em;
-    
-    
-
     margin-bottom: 3cap;
-   
     margin: 0;
     outline: none;
     padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
-   
-    
-
-  
-
-        
-    
-
 }
-
-
-
-
 
 .movie-card {
     display: flex;
@@ -56,4 +40,5 @@
 body {
     margin: 0;
     font-family: "Roboto", "Noto", sans-serif;
+    background-color: $colorGray;
 }
