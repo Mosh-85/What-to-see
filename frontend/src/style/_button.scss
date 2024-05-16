@@ -6,6 +6,8 @@
     padding: .75rem;
     border-color: $colorBlue;
     color: $colorBlue;
+    background-color: $colorGray;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     margin: .6rem;
     border-radius: 0.5rem;
@@ -14,7 +16,6 @@
     cursor: pointer;
 
     li {
-        list-style-type: none;
         padding: .75rem;
         width: 155px;
         border: 1px solid $colorBlue;
@@ -22,8 +23,7 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         margin: .6rem;
         border-radius: 0.5rem;
-        cursor: pointer;
-
+    
 
         a {
             text-decoration: none;
