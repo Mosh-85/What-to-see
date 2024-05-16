@@ -1,10 +1,14 @@
 @import "variabler";
 
 .footer {
-    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0; 
     flex-direction: column;
     background-color: $colorBlue;
-    margin-bottom: 0;
+
 
     h5 {
         color: $colorWhite;
