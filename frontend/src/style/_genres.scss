@@ -20,13 +20,15 @@
           li {
                list-style-type: none;
                padding: .75rem;
-               width: 155px;
-               border: 1px solid $colorBlue;
+               border-inline-color: $colorBlue;
                overflow: hidden;
-               box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+               font-weight: bold;
                margin: .6rem;
                border-radius: 0.5rem;
                cursor: pointer;
+               text-decoration: none;
+               color: $colorBlue;
+               margin-right: 0.5rem;
              
 
                a {

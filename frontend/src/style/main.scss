@@ -14,17 +14,28 @@
     box-sizing: border-box;
 }
 
-.user-list{
+.user-list  {
     list-style-type: none;
-    padding: .75rem;  
-    border: 1px solid $colorBlue;
+    padding: .75rem;
+    border-inline-color: $colorBlue;
     overflow: hidden;
-    box-shadow: 10 10px 10px rgba(0, 0, 0, 0.1);
     font-weight: bold;
     margin: .6rem;
     border-radius: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
+    color: $colorBlue;
+    margin-right: 0.5rem;
+
+    :hover {
+        background-color: $colorBlue;
+        color: $colorWhite;
+    }
+
+    
 }
+
+
 
 .movie-card {
     display: flex;
