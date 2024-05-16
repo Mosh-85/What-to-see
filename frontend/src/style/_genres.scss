@@ -1,7 +1,7 @@
 @import "variabler";
 
 .genres {
-    /*  grid-template-columns: repeat(4, 1fr); */
+     /*  grid-template-columns: repeat(4, 1fr); */
 
 
      h2 {
@@ -17,24 +17,5 @@
           justify-content: center;
      }
 
-          li {
-               list-style-type: none;
-               padding: .75rem;
-               width: 155px;
-               border: 1px solid $colorBlue;
-               overflow: hidden;
-               box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-               margin: .6rem;
-               border-radius: 0.5rem;
-               cursor: pointer;
-             
 
-               a {
-                    text-decoration: none;
-                    color: $colorBlue;
-                    margin-right: 0.5rem;
-               }
-          }
 }
-
- 

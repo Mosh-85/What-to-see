@@ -9,44 +9,18 @@
 @import "genres";
 @import "genrespage";
 @import "userprofile";
+@import "button";
 
 * {
     box-sizing: border-box;
 }
 
-.user-list  {
-    display: flex;
-    list-style-type: none;
-    padding: .75rem;
-    border-color: $colorBlue;
-    overflow: hidden;
-    font-weight: bold;
-    margin: .6rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: $colorBlue;
-    margin-right: 0.5rem;
-
-    :hover {
-        background-color: $colorBlue;
-        color: $colorWhite;
-    }
-
-    
-}
 
 
 
-.movie-card {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-    gap: 1rem;
-    padding: 0;
-    list-style: none;
-}
- 
+
+
+
 body {
     margin: 0;
     font-family: "Roboto", "Noto", sans-serif;

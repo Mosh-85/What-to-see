@@ -19,6 +19,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
                 <>
                     <h4>Du ser med: {user2Name}</h4>
                     <button
+                        className="button"
                         onClick={() => {
                         localStorage.removeItem("loggedInUser2");
                         localStorage.removeItem("loggedInUserName2");
