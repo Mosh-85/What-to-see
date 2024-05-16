@@ -42,7 +42,7 @@ export default function Header({ setLogedIn, userName }) {
       </h1>
       <nav className="myNav">
         <Menu aria-labelledby="demo-positioned-button" anchorEl={anchorEl} open={open} onClose={handleClose}>
-          <MenuItem onClick={handleLogOut} >Logout</MenuItem>
+          <MenuItem className="button" onClick={handleLogOut} >Logout</MenuItem>
         </Menu> 
         <NavLink to="/" className="nav-button"><CgScreen/><p> Hva skal jeg se?</p></NavLink>
         <NavLink to="/genres" className="nav-button"><MdOutlinePlaylistAddCheck/><p> Bla gjennom sjangere</p></NavLink>
