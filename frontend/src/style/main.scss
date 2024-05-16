@@ -10,6 +10,7 @@
 @import "genrespage";
 @import "userprofile";
 @import "button";
+@import "logo";
 
 * {
     box-sizing: border-box;
@@ -23,5 +24,21 @@ body {
 }
 
 main {
-    min-height: 74.5vh;
+    min-height: 74vh;
+    margin: 1.5rem;
 }
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+@media only screen and (min-width: 670px) {
+    main {
+      margin: 3rem;
+    }
+  }

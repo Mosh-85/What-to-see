@@ -2,38 +2,25 @@
 
 .button {
     display: flex;
-    list-style-type: none;
-    padding: .75rem;
-    border-color: $colorBlue;
+    cursor: pointer;
+    border: 1px solid $colorBlue;
     color: $colorBlue;
     background-color: $colorGray;
+
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    font-weight: bold;
     margin: .6rem;
     border-radius: 0.5rem;
     text-decoration: none;
-    margin-right: 0.5rem;
-    cursor: pointer;
-
-    li {
-        padding: .75rem;
-        width: 155px;
-        border: 1px solid $colorBlue;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        margin: .6rem;
-        border-radius: 0.5rem;
-
-
-        a {
-            text-decoration: none;
-            color: $colorBlue;
-            margin-right: 0.5rem;
-        }
-    }
+    padding: .75rem;
+    width: 155px;
+    
+            a {
+                text-align: center;
+            
+            }
 
     :hover {
-        background-color: $colorBlue;
-        color: $colorWhite;
+    background-color: $colorBlue;
+    color: $colorWhite;
     }
 }

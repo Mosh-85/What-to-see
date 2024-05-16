@@ -18,7 +18,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
         <article className="userGrid1">
             {user2Name = localStorage.getItem("loggedInUser2") ? (
                 <>
-                    <h4>Du ser med: {user2Name}</h4>
+                    <h3>Du ser med: {user2Name}</h3>
                     <Link
                         className="button"
                         onClick={() => {
