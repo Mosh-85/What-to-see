@@ -1,5 +1,6 @@
 import Loginfriend from "./Loginfriend"
 import Wishlist from "./Wishlist"
+import { Link } from "react-router-dom"
 import { BsStars } from "react-icons/bs"
 
 export default function Userprofile({userName, user2Name, users, setLogedIn, userId}) {
@@ -18,7 +19,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
             {user2Name = localStorage.getItem("loggedInUser2") ? (
                 <>
                     <h4>Du ser med: {user2Name}</h4>
-                    <button
+                    <Link
                         className="button"
                         onClick={() => {
                         localStorage.removeItem("loggedInUser2");
@@ -26,7 +27,7 @@ export default function Userprofile({userName, user2Name, users, setLogedIn, use
                         setLogedIn("");
                     }}>
                         Bytt venn
-                    </button>
+                    </Link>
                 </>
             ) : (
                     <Loginfriend users={users} setLogedIn={setLogedIn}/>

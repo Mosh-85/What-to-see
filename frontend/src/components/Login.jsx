@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Login({ users, setLogedIn}) {
   
@@ -7,13 +8,13 @@ export default function Login({ users, setLogedIn}) {
       <h2>Hvem skal se i dag?</h2>
       <p>Velg bruker:</p>
         {users.map((user, i) => (
-            <button className="button" key={i} variant="contained" onClick={() => {
+            <Link className="button" key={i} variant="contained" onClick={() => {
                 localStorage.setItem("loggedInUser", user._id)
                 localStorage.setItem("loggedInUserName", user.name)
                 setLogedIn(user.name)
               }}>
               {user.name}
-            </button>
+            </Link>
         ))}
       </div>
     
