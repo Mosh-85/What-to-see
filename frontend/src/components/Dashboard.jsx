@@ -7,7 +7,7 @@ import Utforsk from "./Utforsk"
 export default function Dashboard({userName, user2Name, userId, user2Id}) {
     return (
     <main className="dash">
-        <h1>Forslag for {userName} og {user2Name} </h1>
+        <h2>Forslag for {userName} og {user2Name} </h2>
 
         <section>
             <Commonwishlist userId={userId} user2Id={user2Id} />

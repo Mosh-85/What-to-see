@@ -40,7 +40,7 @@ export default function Utforsk({userId, user2Id}) {
    ).sort((a, b) => a.name.localeCompare(b.name))
    .map((genre, index) => {
     return (
-        <li key={index}>  
+        <li className='button' key={index}>  
           <Link to={`/genres/${genre.slug}`}>
             {genre.name}
           </Link>               
@@ -55,7 +55,7 @@ export default function Utforsk({userId, user2Id}) {
       <>
         <h3>Felles Sjangere!</h3>
         <p>Dere har {listCommonFavGenres.length} sjangere felles i ønskelisten deres</p>
-        <ul className='button'>
+        <ul>
           {listCommonFavGenres.length > 0 ? listCommonFavGenres : <p>Ingen felles genres</p>}
         </ul>
 
