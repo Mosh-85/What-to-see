@@ -49,10 +49,11 @@ export default function Genres({ userId }) {
     <main className="genres">
       <h2>Alle sjangere</h2>
       <p>{formMessage}</p>
-      <ul>
+      <ul className="button" >
         {genres.map((genre) => (
           <li key={genre.genreslug}>
-            <Link to={`/genres/${genre.genreslug}`}>
+            <Link 
+             to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>
             <label>

@@ -9,33 +9,13 @@
 @import "genres";
 @import "genrespage";
 @import "userprofile";
+@import "button";
 
 * {
     box-sizing: border-box;
 }
 
-.user-list  {
-    display: flex;
-    list-style-type: none;
-    padding: .75rem;
-    border-color: $colorBlue;
-    overflow: hidden;
-    font-weight: bold;
-    margin: .6rem;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    text-decoration: none;
-    color: $colorBlue;
-    margin-right: 0.5rem;
 
-    :hover {
-        background-color: $colorBlue;
-        color: $colorWhite;
-    }
-
-    
-}
- 
 body {
     margin: 0;
     font-family: "Roboto", "Noto", sans-serif;

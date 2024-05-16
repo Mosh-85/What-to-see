@@ -7,10 +7,10 @@ export default function Loginfriend({ users, setLogedIn}) {
     return (
     <>
         <h4>Jeg skal se sammen med...</h4>
-        <div className="user-list">
+        <div>
         {users.filter(user => user.name !== localStorage.getItem("loggedInUserName"))
         .map((user, i) => (
-            <button key={i} variant="contained" onClick={() => {
+            <button className="button" key={i} variant="contained" onClick={() => {
               localStorage.setItem("loggedInUser2", user._id);
               localStorage.setItem("loggedInUserName2", user.name);
               setLogedIn(user.name)
