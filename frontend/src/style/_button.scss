@@ -6,13 +6,13 @@
     border: 1px solid $colorBlue;
     color: $colorBlue;
     background-color: $colorGray;
-
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     margin: .6rem;
     border-radius: 0.5rem;
     text-decoration: none;
     padding: .75rem;
     width: 155px;
+    justify-content: space-between;
 
     a {
         text-align: center;

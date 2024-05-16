@@ -49,14 +49,15 @@ export default function Genres({ userId }) {
     <main className="genres">
       <h2>Alle sjangere</h2>
       <p>{formMessage}</p>
-      <ul >
+      <ul>
         {genres.map((genre) => (
-          <li className="button" key={genre.genreslug}>
+          <li className="pos"  key={genre.genreslug}>
             <Link 
+            className="button"
              to={`/genres/${genre.genreslug}`}>
             {genre.name}
             </Link>
-            <label>
+            <label className="checkbox">
               <input
                   type="checkbox"
                   checked={favGenres.includes(genre._id)}

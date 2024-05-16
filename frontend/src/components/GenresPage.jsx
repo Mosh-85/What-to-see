@@ -21,7 +21,8 @@ export default function GenresPage() {
 
       const listMoviesByGenre = moviesByGenre?.map((movies, index) => {
         return (
-         <MovieCard movies={movies} index={index} />
+            <MovieCard movies={movies} index={index} key={index} />
+         
         )
       }) 
 

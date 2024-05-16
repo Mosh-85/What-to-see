@@ -37,6 +37,15 @@
     ul {
 
         flex-direction: column;
+
+        li {
+            padding: 0;
+
+            a {
+                padding: 0.75rem;
+                padding-right: 66px;
+            }
+        }
     }
 }
 

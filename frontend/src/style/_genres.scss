@@ -17,5 +17,26 @@
           justify-content: center;
      }
 
+     li {
+          padding: 0;
+          list-style: none;
 
+          a {
+               padding: .75rem;
+          }
+
+          ;
+     }
+
+
+}
+
+.pos {
+     position: relative;
+}
+
+.checkbox {
+     position: absolute;
+     right: 25px;
+     top: 22px;
 }
