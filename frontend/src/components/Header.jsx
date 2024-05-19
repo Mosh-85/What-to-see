@@ -48,6 +48,7 @@ export default function Header({ setLogedIn, userName, user2Name }) {
             Logg ut
           </MenuItem>
         </Menu>
+
         <NavLink to="/" className="nav-button">
           <CgScreen />
           <p> Hva skal jeg se?</p>
@@ -63,11 +64,18 @@ export default function Header({ setLogedIn, userName, user2Name }) {
             ""
           ))
         }
-        <NavLink to="/genres" className="nav-button">
-          <MdOutlinePlaylistAddCheck />
-          <p> Bla gjennom sjangere</p>
-        </NavLink>
-        {/* KILDE: https://reactrouter.com/en/main/components/nav-link */}
+
+        {
+          (user2Name = localStorage.getItem("loggedInUser") ? (
+            <NavLink to="/genres" className="nav-button">
+              <MdOutlinePlaylistAddCheck />
+              <p> Bla gjennom sjangere</p>
+            </NavLink>
+          ) : (
+            // KILDE: https://reactrouter.com/en/main/components/nav-link
+            ""
+          ))
+        }
       </nav>
       <a
         className="user"
