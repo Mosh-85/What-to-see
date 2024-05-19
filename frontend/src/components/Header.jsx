@@ -45,7 +45,7 @@ export default function Header({ setLogedIn, userName }) {
           onClose={handleClose}
         >
           <MenuItem className="button" onClick={handleLogOut}>
-            Logout
+            Logg ut
           </MenuItem>
         </Menu>
         <NavLink to="/" className="nav-button">
