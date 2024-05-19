@@ -64,6 +64,7 @@ nav {
 
 .nav-button {
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding: 0.5rem;
     color: $colorWhite;
@@ -73,8 +74,9 @@ nav {
 
     p {
         margin: 0;
-        font-size: .9rem;
+        font-size: .7rem;
     }
+
 
     &:hover {
         background-color: $colorGray;
@@ -86,10 +88,11 @@ nav {
     }
 
     svg {
-        height: 2.3rem;
-        width: 2.3rem;
+        height: 2rem;
+        width: 2rem;
         color: $colorGray;
-        margin-right: 0.5rem;
+        margin-right: 0;
+        align-self: center;
     }
 
 
@@ -104,7 +107,7 @@ nav {
     }
 }
 
-@media only screen and (min-width: 670px) {
+@media only screen and (min-width: 888px) {
     .header {
         grid-template-columns: auto 1fr auto;
         grid-template-rows: auto;
@@ -118,5 +121,21 @@ nav {
             justify-content: flex-end;
             margin-right: 0rem;
         }
+        .nav-button {
+            display: flex;
+            flex-direction: row;
+            p {
+                margin: 0;
+                font-size: .9rem;
+            }
+
+            svg {
+                height: 2.3rem;
+                width: 2.3rem;
+                margin-right: 0.5rem;
+            }
+        }
+        
     }
+    
 }

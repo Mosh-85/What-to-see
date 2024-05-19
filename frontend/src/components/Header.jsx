@@ -54,7 +54,7 @@ export default function Header({ setLogedIn, userName }) {
         </NavLink>
         <NavLink to="/dashboard" className="nav-button">
           <CgBoard />
-          <p> Samenligning </p>
+          <p> Sammenligning </p>
         </NavLink>
         <NavLink to="/genres" className="nav-button">
           <MdOutlinePlaylistAddCheck />
