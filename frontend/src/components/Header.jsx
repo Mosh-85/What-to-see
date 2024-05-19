@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { CgScreen } from "react-icons/cg";
+import { CgScreen, CgBoard } from "react-icons/cg";
 import { MdOutlinePlaylistAddCheck } from "react-icons/md";
 import { Avatar } from "@mui/material";
 import Menu from "@mui/material/Menu";
@@ -45,12 +45,16 @@ export default function Header({ setLogedIn, userName }) {
           onClose={handleClose}
         >
           <MenuItem className="button" onClick={handleLogOut}>
-            Logout
+            Logg ut
           </MenuItem>
         </Menu>
         <NavLink to="/" className="nav-button">
           <CgScreen />
           <p> Hva skal jeg se?</p>
+        </NavLink>
+        <NavLink to="/dashboard" className="nav-button">
+          <CgBoard />
+          <p> Samenligning </p>
         </NavLink>
         <NavLink to="/genres" className="nav-button">
           <MdOutlinePlaylistAddCheck />
