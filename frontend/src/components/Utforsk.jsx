@@ -1,67 +1,66 @@
-import { useState, useEffect } from 'react';
-import { fetchFavGenres } from '../../sanity/services.js/userServices';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { fetchFavGenres } from "../../sanity/services.js/userServices";
+import { Link } from "react-router-dom";
 
+export default function Utforsk({ userId, user2Id }) {
+  const [favGenres, setFavGenres] = useState(null);
+  const [favGenres2, setFavGenres2] = useState(null);
 
-export default function Utforsk({userId, user2Id}) {
-    const [favGenres, setFavGenres] = useState(null)
-    const [favGenres2, setFavGenres2] = useState(null)
-
-
-    useEffect(() => { 
-      const fetchData = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
       const data = await fetchFavGenres(userId);
       const combinedGenres = data[0].favoriteGenresName.map((genre, index) => ({
-         name: genre.name,
-         slug: data[0].genreslugs[index]
-       }));
+        name: genre.name,
+        slug: data[0].genreslugs[index],
+      }));
       setFavGenres(combinedGenres);
-     }
-     fetchData();
- }, [userId]);
+    };
+    fetchData();
+  }, [userId]);
 
-
-   useEffect(() => { 
-      const fetchData = async () => {
+  useEffect(() => {
+    const fetchData = async () => {
       const data = await fetchFavGenres(user2Id);
       const combinedGenres = data[0].favoriteGenresName.map((genre, index) => ({
-         name: genre.name,
-         slug: data[0].genreslugs[index]
-       }));
+        name: genre.name,
+        slug: data[0].genreslugs[index],
+      }));
       setFavGenres2(combinedGenres);
-     }
+    };
     fetchData();
-   }, [user2Id]);
+  }, [user2Id]);
 
-   
-
-  const listCommonFavGenres = favGenres?.filter(genre1 =>
-   favGenres2?.some(genre2 => genre2.name === genre1.name)
-   ).sort((a, b) => a.name.localeCompare(b.name))
-   .map((genre, index) => {
-    return (
-        <li className='button' key={index}>  
-          <Link to={`/genres/${genre.slug}`}>
-            {genre.name}
-          </Link>               
-        </li>
-    );
-  });
-
-
-   return (
-    <article className='utforsk'>
-        {listCommonFavGenres && (
-      <>
-        <h3>Felles Sjangere!</h3>
-        <p>Dere har {listCommonFavGenres.length} sjangere felles i ønskelisten deres</p>
-        <ul>
-          {listCommonFavGenres.length > 0 ? listCommonFavGenres : <p>Ingen felles genres</p>}
-        </ul>
-
-
-      </>
-)}
-    </article>
+  const listCommonFavGenres = favGenres
+    ?.filter((genre1) =>
+      favGenres2?.some((genre2) => genre2.name === genre1.name)
     )
+    .sort((a, b) => a.name.localeCompare(b.name))
+    .map((genre, index) => {
+      return (
+        <li className="button" key={index}>
+          <Link to={`/genres/${genre.slug}`}>{genre.name}</Link>
+        </li>
+      );
+    });
+
+  return (
+    <article className="utforsk">
+      {listCommonFavGenres && (
+        <>
+          <h3>Felles Sjangere!</h3>
+          <p>
+            Dere har {listCommonFavGenres.length} sjangere felles i ønskelisten
+            deres
+          </p>
+          <ul>
+            {listCommonFavGenres.length > 0 ? (
+              listCommonFavGenres
+            ) : (
+              <p>Ingen felles genres</p>
+            )}
+          </ul>
+        </>
+      )}
+    </article>
+  );
 }
