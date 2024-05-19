@@ -6,7 +6,7 @@ import { Avatar } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-export default function Header({ setLogedIn, userName }) {
+export default function Header({ setLogedIn, userName, user2Name }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
@@ -52,10 +52,17 @@ export default function Header({ setLogedIn, userName }) {
           <CgScreen />
           <p> Hva skal jeg se?</p>
         </NavLink>
-        <NavLink to="/dashboard" className="nav-button">
-          <CgBoard />
-          <p> Sammenligning </p>
-        </NavLink>
+
+        {
+          (user2Name = localStorage.getItem("loggedInUser2") ? (
+            <NavLink to="/dashboard" className="nav-button">
+              <CgBoard />
+              <p> Sammenligning </p>
+            </NavLink>
+          ) : (
+            ""
+          ))
+        }
         <NavLink to="/genres" className="nav-button">
           <MdOutlinePlaylistAddCheck />
           <p> Bla gjennom sjangere</p>

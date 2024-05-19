@@ -18,12 +18,36 @@ function App() {
 
   return (
     <>
-      <Header setLogedIn={setLogedIn} userName={userName} />
+      <Header
+        setLogedIn={setLogedIn}
+        userName={userName}
+        user2Name={user2Name}
+      />
       <Routes>
-        <Route path="/" element={<Home userName={userName} user2Name={user2Name} setLogedIn={setLogedIn} userId={userId} />}/>
-        <Route path="/genres" element={<Genres userId={userId}/>} />
+        <Route
+          path="/"
+          element={
+            <Home
+              userName={userName}
+              user2Name={user2Name}
+              setLogedIn={setLogedIn}
+              userId={userId}
+            />
+          }
+        />
+        <Route path="/genres" element={<Genres userId={userId} />} />
         <Route path="/genres/:slug" element={<GenresPage />} />
-        <Route path="/dashboard" element={<Dashboard userName={userName} user2Name={user2Name} userId={userId} user2Id={user2Id} />} />
+        <Route
+          path="/dashboard"
+          element={
+            <Dashboard
+              userName={userName}
+              user2Name={user2Name}
+              userId={userId}
+              user2Id={user2Id}
+            />
+          }
+        />
       </Routes>
       <Footer />
     </>
