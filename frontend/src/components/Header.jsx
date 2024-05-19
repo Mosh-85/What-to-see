@@ -63,15 +63,11 @@ export default function Header({ setLogedIn, userName }) {
           ""
         )}
 
-        {localStorage.getItem("loggedInUser") ? (
-          <NavLink to="/genres" className="nav-button">
-            <MdOutlinePlaylistAddCheck />
-            <p> Bla gjennom sjangere</p>
-          </NavLink>
-        ) : (
-          // KILDE: https://reactrouter.com/en/main/components/nav-link
-          ""
-        )}
+        <NavLink to="/genres" className="nav-button">
+          <MdOutlinePlaylistAddCheck />
+          <p> Bla gjennom sjangere</p>
+        </NavLink>
+        {/* KILDE: https://reactrouter.com/en/main/components/nav-link */}
       </nav>
       <a
         className="user"

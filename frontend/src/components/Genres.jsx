@@ -16,9 +16,10 @@ export default function Genres({ userId }) {
     const fetchData = async () => {
       const allGenres = await fetchAllGenres();
       setGenres(allGenres.sort((a, b) => a.name.localeCompare(b.name)));
-
-      const favGenresData = await fetchFavGenres(userId);
-      setFavGenres(favGenresData[0].favoriteGenres);
+      if (localStorage.getItem("loggedInUser") != null) {
+        const favGenresData = await fetchFavGenres(userId);
+        setFavGenres(favGenresData[0].favoriteGenres);
+      }
     };
 
     fetchData();

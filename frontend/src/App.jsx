@@ -30,7 +30,10 @@ function App() {
             <Home userName={userName} setLogedIn={setLogedIn} userId={userId} />
           }
         />
-        <Route path="/genres" element={<Genres userId={userId} />} />
+        <Route
+          path="/genres"
+          element={<Genres userId={userId} userName={userName} />}
+        />
         <Route path="/genres/:slug" element={<GenresPage />} />
         <Route
           path="/dashboard"
