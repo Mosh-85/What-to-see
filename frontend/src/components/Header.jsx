@@ -6,7 +6,7 @@ import { Avatar } from "@mui/material";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 
-export default function Header({ setLogedIn, userName, user2Name }) {
+export default function Header({ setLogedIn, userName }) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const navigate = useNavigate();
@@ -54,28 +54,24 @@ export default function Header({ setLogedIn, userName, user2Name }) {
           <p> Hva skal jeg se?</p>
         </NavLink>
 
-        {
-          (user2Name = localStorage.getItem("loggedInUser2") ? (
-            <NavLink to="/dashboard" className="nav-button">
-              <CgBoard />
-              <p> Sammenligning </p>
-            </NavLink>
-          ) : (
-            ""
-          ))
-        }
+        {localStorage.getItem("loggedInUser2") ? (
+          <NavLink to="/dashboard" className="nav-button">
+            <CgBoard />
+            <p> Sammenligning </p>
+          </NavLink>
+        ) : (
+          ""
+        )}
 
-        {
-          (user2Name = localStorage.getItem("loggedInUser") ? (
-            <NavLink to="/genres" className="nav-button">
-              <MdOutlinePlaylistAddCheck />
-              <p> Bla gjennom sjangere</p>
-            </NavLink>
-          ) : (
-            // KILDE: https://reactrouter.com/en/main/components/nav-link
-            ""
-          ))
-        }
+        {localStorage.getItem("loggedInUser") ? (
+          <NavLink to="/genres" className="nav-button">
+            <MdOutlinePlaylistAddCheck />
+            <p> Bla gjennom sjangere</p>
+          </NavLink>
+        ) : (
+          // KILDE: https://reactrouter.com/en/main/components/nav-link
+          ""
+        )}
       </nav>
       <a
         className="user"

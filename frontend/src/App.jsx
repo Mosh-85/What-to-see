@@ -27,12 +27,7 @@ function App() {
         <Route
           path="/"
           element={
-            <Home
-              userName={userName}
-              user2Name={user2Name}
-              setLogedIn={setLogedIn}
-              userId={userId}
-            />
+            <Home userName={userName} setLogedIn={setLogedIn} userId={userId} />
           }
         />
         <Route path="/genres" element={<Genres userId={userId} />} />
