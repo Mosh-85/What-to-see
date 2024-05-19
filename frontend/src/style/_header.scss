@@ -36,9 +36,22 @@
         font-size: 0.75rem;
         text-align: center;
         font-weight: bold;
-        border-radius: 0.5rem;
+        border-radius: 0.5rem;    
     }
 }
+
+.MuiList-root {
+    li {
+        &:hover {
+            background-color: $colorBlue;
+            color: $colorGray;
+            border: 1px solid $colorGray;
+         
+        }
+    }
+}
+
+
 
 nav {
     display: flex;

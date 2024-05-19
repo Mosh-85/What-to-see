@@ -3,13 +3,7 @@ import Wishlist from "./Wishlist";
 import { Link } from "react-router-dom";
 import { BsStars } from "react-icons/bs";
 
-export default function Userprofile({
-  userName,
-  user2Name,
-  users,
-  setLogedIn,
-  userId,
-}) {
+export default function Userprofile({userName, user2Name, users, setLogedIn, userId,}) {
   return (
     <div className="uProfile">
       <h2>Velkommen: {userName}</h2>
