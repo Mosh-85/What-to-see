@@ -62,7 +62,7 @@ export default function Mixmatch({ userId, user2Id, userName, user2Name }) {
     });
 
   return (
-    <div>
+    <>
       <article>
         <h3>
           Favorittene til {user2Name} og ønske filmene til {userName}:{" "}
@@ -75,6 +75,6 @@ export default function Mixmatch({ userId, user2Id, userName, user2Name }) {
         </h3>
         <ul className="article-card">{listMixMatchrev}</ul>
       </article>
-    </div>
+    </>
   );
 }
