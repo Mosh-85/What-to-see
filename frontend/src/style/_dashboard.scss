@@ -49,6 +49,14 @@
     }
 }
 
+.mixmatch {
+    article{
+        margin: 1rem;
+    }
+
+
+}
+
 
 @media only screen and (min-width: 980px) {
     .dash {
@@ -65,10 +73,6 @@
         grid-row: 3/4;
         grid-column: 1/4;
 
-        div {
-            display: flex;
-            gap: 2rem;
-        }
 
         article {
             display: flex;
