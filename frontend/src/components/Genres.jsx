@@ -31,14 +31,16 @@ export default function Genres({ userId }) {
       if (favGenres.includes(genreId)) {
         await removeFavGenre(userId, genreId);
         setFavGenres(favGenres.filter((id) => id !== genreId));
-        setFormMessage("Genre removed from favorites.");
+        setFormMessage("Sjanger fjernet fra favoritter.");
       } else {
         await addFavGenre(userId, genreId);
         setFavGenres([...favGenres, genreId]);
-        setFormMessage("Genre added to favorites.");
+        setFormMessage("Sjanger lagt til favoritter.");
       }
     } catch (error) {
-      setFormMessage("Error updating favorites. Please try again.");
+      setFormMessage(
+        "Feil ved oppdatering av favoritter. Vennligst prøv igjen."
+      );
     }
   };
 
